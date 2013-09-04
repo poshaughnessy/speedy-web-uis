@@ -1,0 +1,458 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+
+}
+
+body {
+    line-height: 1;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of CSS Reset */
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Arimo';
+    src: url('../fonts/Arimo/Arimo-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Arimo';
+    font-weight: bold;
+    src: url('../fonts/Arimo/Arimo-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Arimo';
+    font-style: italic;
+    src: url('../fonts/Arimo/Arimo-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Arimo';
+    font-style: italic;
+    font-weight: bold;
+    src: url('../fonts/Arimo/Arimo-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'GeekAByte';
+    src: url('../fonts/GeekAByte/geekabyte2.ttf');
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('../fonts/SourceCodePro/SourceCodePro-Regular.ttf');
+}
+
+
+body {
+    font: 15px 'SourceCodePro', Helvetica, 'arial', sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #fff;
+    color: #313131;
+    -webkit-font-smoothing: antialiased;
+}
+
+.presentation {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    display: block;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    -moz-transition: -moz-transform 1s ease-in-out;
+    -o-transition: -o-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transition: margin 0.25s ease-in-out;
+    -moz-transition: margin 0.25s ease-in-out;
+    -o-transition: margin 0.25s ease-in-out;
+    transition: margin 0.25s ease-in-out;
+}
+
+.force-render {
+    display: block;
+    visibility: hidden;
+}
+
+.slide.far-past {
+    display: block;
+    margin-left: -200%;
+}
+
+.slide.past {
+    visibility: visible;
+    display: block;
+    margin-left: -100%;
+}
+
+.slide.current {
+    visibility: visible;
+    display: block;
+}
+
+.slide.future {
+    visibility: visible;
+    display: block;
+    margin-left: 100%;
+}
+
+.slide.far-future {
+    display: block;
+    margin-left: 200%;
+}
+
+.slide .contents {
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    top: 50%;
+    left: 50%;
+    margin-top: -240px;
+    margin-left: -320px;
+}
+
+/* Responsive slide sizes */
+/* 640 x 480 is now the default */
+
+/* 800 x 600 */
+@media (min-width: 800px) and (min-height: 600px) {
+    body {
+        font-size: 18.75px;
+    }
+
+    .slide .contents {
+        width: 800px;
+        height: 600px;
+        margin-top: -300px;
+        margin-left: -400px;
+    }
+}
+
+/* 1024 x 768 */
+@media (min-width: 1024px) and (min-height: 768px) {
+    body {
+        font-size: 24px;
+    }
+
+    .slide .contents {
+        width: 1024px;
+        height: 768px;
+        margin-top: -384px;
+        margin-left: -512px;
+    }
+}
+
+/* 1152 x 864 */
+@media (min-width: 1152px) and (min-height: 864px) {
+    body {
+        font-size: 27px;
+    }
+
+    .slide .contents {
+        width: 1152px;
+        height: 864px;
+        margin-top: -432px;
+        margin-left: -576px;
+    }
+}
+
+/* 1280 x 960 */
+@media (min-width: 1280px) and (min-height: 960px) {
+    body {
+        font-size: 30px;
+    }
+
+    .slide .contents {
+        width: 1280px;
+        height: 960px;
+        margin-top: -480px;
+        margin-left: -640px;
+    }
+}
+
+/* 1440 x 1080 */
+@media (min-width: 1440px) and (min-height: 1080px) {
+    body {
+        font-size: 33.75px;
+    }
+
+    .slide .contents {
+        width: 1440px;
+        height: 1080px;
+        margin-top: -540px;
+        margin-left: -720px;
+    }
+}
+
+/* 1600 x 1200 */
+@media (min-width: 1600px) and (min-height: 1200px) {
+    body {
+        font-size: 37.5px;
+    }
+
+    .slide .contents {
+        width: 1600px;
+        height: 1200px;
+        margin-top: -600px;
+        margin-left: -800px;
+    }
+}
+
+/* 1920 x 1440 */
+@media (min-width: 1920px) and (min-height: 1440px) {
+    body {
+        font-size: 45px;
+    }
+
+    .slide .contents {
+        width: 1920px;
+        height: 1440px;
+        margin-top: -720px;
+    }
+}
+
+body.three-d div.slides {
+    -webkit-transform: scale(0.78);
+    -moz-transform: scale(0.78);
+    -o-transform: scale(0.78);
+    transform: scale(0.78);
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0.5em 0 0.5em 0;
+    text-shadow: 2px 2px 2px #CCC;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0.2em 0 0.5em 0;
+    width: 100%;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.top {
+    margin-top: 3%;
+}
+
+.bottom {
+    bottom: 5%;
+    position: absolute;
+    width: 100%;
+}
+
+.central {
+    margin-top: 25%;
+}
+
+figcaption {
+    margin-top: 1em;
+}
+
+.slide .contents img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+blockquote {
+    font-size: 2em;
+    margin-top: 2em;
+}
+
+blockquote p {
+    margin-bottom: 1em;
+}
+
+small.source {
+    display: block;
+    margin-top: 2em;
+    font-style: italic;
+}
+
+/* Slideshows */
+
+[data-slideshow] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+[data-slideshow] > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+[data-slideshow] img,
+[data-slideshow] .caption,
+[data-slideshow] div > * {
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+[data-slideshow] img {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+[data-slideshow] .caption {
+    margin-top: 0.5em;
+}
+
+[data-slideshow] .current img,
+[data-slideshow] .current .caption,
+[data-slideshow] .current > * {
+    opacity: 1;
+}
+
+.fade {
+    opacity: 0.5;
+}
+
+/* Multi-step slides */
+[data-build] > .to-build {
+    opacity: 0;
+}
+
+[data-build] > * {
+    -webkit-transition: opacity 0.5s ease-in-out 0.2s;
+    -moz-transition: opacity 0.5s ease-in-out 0.2s;
+    -o-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+.github-ribbon img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 120px;
+}
+
+/* Slide-specific styles */
+
+.intro {
+
+    h1 {
+        margin-top: 0.2em;
+    }
+
+    h2 {
+        margin-top: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    img {
+        width: 50%;
+    }
+
+}
