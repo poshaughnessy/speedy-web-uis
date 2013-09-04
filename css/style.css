@@ -313,11 +313,11 @@ small.source {
 [data-slideshow] .caption,
 [data-slideshow] div > * {
   opacity: 0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  -ms-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out; }
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out; }
 
 [data-slideshow] img {
   position: relative;
@@ -340,9 +340,11 @@ small.source {
   opacity: 0; }
 
 [data-build] > * {
+  /*
   -webkit-transition: opacity 0.5s ease-in-out 0.2s;
   -moz-transition: opacity 0.5s ease-in-out 0.2s;
-  -o-transition: opacity 0.5s ease-in-out 0.2s; }
+  -o-transition: opacity 0.5s ease-in-out 0.2s;
+  */ }
 
 .github-ribbon img {
   position: absolute;
@@ -350,6 +352,9 @@ small.source {
   right: 0;
   z-index: -1;
   width: 120px; }
+
+.strike-through {
+  text-decoration: line-through; }
 
 /* Slide-specific styles */
 .intro h1 {
