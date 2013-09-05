@@ -89,6 +89,9 @@ body {
   color: #313131;
   -webkit-font-smoothing: antialiased; }
 
+strong {
+  font-weight: bold; }
+
 .presentation {
   position: absolute;
   height: 100%;
