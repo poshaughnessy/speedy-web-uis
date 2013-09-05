@@ -160,7 +160,7 @@ body {
   margin-left: -320px; }
 
 /* Responsive slide sizes */
-/* 640 x 480 is now the default */
+/* 640 x 480 is now the default (and minimum, for now) */
 /* 800 x 600 */
 @media (min-width: 800px) and (min-height: 600px) {
   body {
