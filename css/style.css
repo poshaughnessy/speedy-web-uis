@@ -396,6 +396,10 @@ small.source {
 .intro img {
   width: 50%; }
 
+.code-ahead img {
+  margin-top: 10%;
+  width: 50%; }
+
 .presumptions img {
   position: absolute;
   top: auto;
