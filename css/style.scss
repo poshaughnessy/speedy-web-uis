@@ -111,6 +111,10 @@ strong {
     font-weight: bold;
 }
 
+em {
+    font-style: italic;
+}
+
 .presentation {
     position: absolute;
     height: 100%;
@@ -336,11 +340,17 @@ ul {
         font-size: 1.8em;
         line-height: 2em;
     }
+
+    &.smaller li {
+        font-size: 1.5em;
+        line-height: 1.8em;
+    }
 }
 
 .centre-wrap {
     position: relative;
     float: left;
+    clear: left;
     left: 50%;
 
     ul {
@@ -494,4 +504,16 @@ small.source {
         width: 50%;
     }
 
+}
+
+.presumptions {
+
+    img {
+        position: absolute;
+        top: auto;
+        left: auto;
+        bottom: 21%;
+        right: 18%;
+        width: 21%;
+    }
 }
