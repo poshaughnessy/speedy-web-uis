@@ -325,7 +325,26 @@ a {
 }
 
 ul {
-    list-style-type: none;
+
+    margin-top: 1em;
+
+    li {
+        font-size: 1.8em;
+        line-height: 2em;
+    }
+}
+
+.centre-wrap {
+    position: relative;
+    float: left;
+    left: 50%;
+
+    ul {
+        position: relative;
+        left: -50%;
+        text-align: left;
+    }
+
 }
 
 .hidden {
@@ -385,9 +404,9 @@ small.source {
     height: 100%;
 }
 
-[data-slideshow] img,
-[data-slideshow] .caption,
-[data-slideshow] div > * {
+[data-slideshow] > img,
+[data-slideshow] > .caption,
+[data-slideshow] > div > * {
     opacity: 0;
     -webkit-transition: opacity 0.25s ease-in-out;
     -moz-transition: opacity 0.25s ease-in-out;
@@ -439,6 +458,16 @@ small.source {
 
 .strike-through {
     text-decoration: line-through;
+    position: relative;
+
+    &::after{
+        content: '';
+        border-bottom: 3px solid #313131;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+    }
 }
 
 /* Slide-specific styles */
