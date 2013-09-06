@@ -617,9 +617,19 @@ small.source {
 
     &.live-code {
 
-        .contents > p:nth-of-type(1) {
-            margin-top: 4em;
+        h3 {
+            margin: 4em 0 1em 0;
             font-style: italic;
+            font-size: 1.4em;
+        }
+
+        p {
+            font-size: 1.4em;
+
+            &.link {
+                font-size: 1.6em;
+            }
+
         }
 
         .made-earlier {
