@@ -408,7 +408,36 @@ small.source {
   right: 18%;
   width: 21%; }
 
-.libraries2 ul {
+.libraries ul {
   width: 100%;
   margin-left: 10%;
   text-align: left; }
+
+.demos {
+  position: relative;
+  float: left;
+  clear: left;
+  left: 50%;
+  margin-top: 1.5em;
+  min-width: 50%; }
+  .demos .demo {
+    margin-bottom: 3em;
+    position: relative;
+    left: -50%;
+    text-align: left; }
+    .demos .demo img {
+      width: 25%;
+      float: left; }
+    .demos .demo h4 {
+      white-space: nowrap; }
+    .demos .demo h4, .demos .demo p {
+      text-align: left;
+      margin-bottom: 0.5em;
+      padding-left: 30%; }
+    .demos .demo p {
+      font-size: 0.9em; }
+      .demos .demo p.video {
+        font-size: 0.7em; }
+
+.demos + * {
+  clear: left; }

@@ -525,10 +525,58 @@ small.source {
     }
 }
 
-.libraries2 {
+.libraries {
     ul {
         width: 100%;
         margin-left: 10%;
         text-align: left;
     }
+}
+
+.demos {
+
+    position: relative;
+    float: left;
+    clear: left;
+    left: 50%;
+    margin-top: 1.5em;
+    min-width: 50%;
+
+    .demo {
+        margin-bottom: 3em;
+        position: relative;
+        left: -50%;
+        text-align: left;
+
+        img {
+            width: 25%;
+            float: left;
+        }
+
+        h4 {
+            white-space: nowrap;
+        }
+
+        h4, p {
+            text-align: left;
+            margin-bottom: 0.5em;
+            padding-left: 30%;
+        }
+
+        p {
+
+            font-size: 0.9em;
+
+            &.video {
+                font-size: 0.7em;
+            }
+
+        }
+
+    }
+
+}
+
+.demos + * {
+    clear: left;
 }
