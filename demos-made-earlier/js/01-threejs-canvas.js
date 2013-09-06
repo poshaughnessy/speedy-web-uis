@@ -48,8 +48,6 @@
 
     var animate = function() {
 
-        mesh.rotation.y += 0.02;
-
         renderer.render( scene, camera );
 
         requestAnimationFrame( animate );
