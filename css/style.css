@@ -306,6 +306,9 @@ figcaption {
 .slide .contents img {
   max-width: 80%;
   max-height: 80%; }
+.slide .contents > p {
+  font-size: 1.2em;
+  margin-bottom: 1em; }
 
 blockquote {
   font-size: 2em;
@@ -387,33 +390,29 @@ small.source {
     width: 100%; }
 
 /* Slide-specific styles */
-.intro h1 {
+.slide.intro h1 {
   margin-top: 0.2em; }
-.intro h2 {
+.slide.intro h2 {
   margin-top: 1.5em; }
-.intro h3 {
+.slide.intro h3 {
   font-size: 1.3em; }
-.intro img {
+.slide.intro img {
   width: 50%; }
-
-.code-ahead img {
+.slide.code-ahead img {
   margin-top: 10%;
   width: 70%; }
-
-.presumptions img {
+.slide.presumptions img {
   position: absolute;
   top: auto;
   left: auto;
   bottom: 21%;
   right: 18%;
   width: 21%; }
-
-.libraries ul {
+.slide.libraries ul {
   width: 100%;
   margin-left: 10%;
   text-align: left; }
-
-.demos {
+.slide .demos {
   position: relative;
   float: left;
   clear: left;
@@ -421,34 +420,40 @@ small.source {
   margin-top: 1.5em;
   min-width: 70%;
   padding-bottom: 2em; }
-  .demos .demo {
+  .slide .demos .demo {
     margin-bottom: 3em;
     position: relative;
     left: -50%;
     text-align: left; }
-    .demos .demo img {
+    .slide .demos .demo img {
       width: 35%;
       float: left; }
-    .demos .demo h4 {
+    .slide .demos .demo h4 {
       font-size: 1.4em;
       white-space: nowrap; }
-    .demos .demo h4, .demos .demo p {
+    .slide .demos .demo h4, .slide .demos .demo p {
       text-align: left;
       margin-bottom: 0.5em;
       padding-left: 40%; }
-    .demos .demo p {
+    .slide .demos .demo p {
       font-size: 1.2em; }
-  .demos.smaller {
+  .slide .demos.smaller {
     min-width: 50%;
     padding-bottom: 1em; }
-    .demos.smaller .demo img {
+    .slide .demos.smaller .demo img {
       width: 25%; }
-    .demos.smaller .demo h4 {
+    .slide .demos.smaller .demo h4 {
       font-size: 1em; }
-    .demos.smaller .demo p {
+    .slide .demos.smaller .demo p {
       font-size: 0.9em; }
-      .demos.smaller .demo p.video {
+      .slide .demos.smaller .demo p.video {
         font-size: 0.7em; }
-
-.demos + * {
+.slide .demos + * {
   clear: left; }
+.slide.live-code .contents > p:nth-of-type(1) {
+  margin-top: 4em;
+  font-style: italic; }
+.slide.live-code .made-earlier {
+  margin-top: 4em; }
+  .slide.live-code .made-earlier p {
+    font-size: 0.9em; }

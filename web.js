@@ -8,6 +8,7 @@ app.get('/', function(request, response) {
 
 app.configure(function() {
     app.use('/css', express.static(__dirname + '/css'));
+    app.use('/demos', express.static(__dirname + '/demos'));
     app.use('/fonts', express.static(__dirname + '/fonts'));
     app.use('/img', express.static(__dirname + '/img'));
     app.use('/js', express.static(__dirname + '/js'));

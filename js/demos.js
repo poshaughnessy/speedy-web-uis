@@ -13,11 +13,9 @@ var Demos = {
 
         var $currentSlide = $('.slide:eq('+slideNumber+')');
 
-        if( $currentSlide.hasClass('leapmotion-dino') ) {
-            this.activationFlags.leapMotionDino = true;
+        if( $currentSlide.hasClass('dino-demo') ) {
+            this.activationFlags.dinoDemo = true;
 
-        } else if( $currentSlide.hasClass('leapmotion-dino') ) {
-            this.longJumpDemo.start();
         }
 
     },
@@ -39,9 +37,7 @@ var Demos = {
         console.log('width', this.width);
         console.log('height', this.height);
 
-        this.leapMotionDino = new LeapMotionDinoDemo(this);
-
-        this.longJumpDemo = new LongJumpDemo(this);
+        this.dinoDemo = new dinoDemo(this);
 
         var self = this;
 
@@ -49,8 +45,8 @@ var Demos = {
 
             self.setSize();
 
-            if( self.leapMotionDino ) {
-                self.leapMotionDino.updateSize();
+            if( self.dinoDemo ) {
+                self.dinoDemo.updateSize();
             }
 
         }, false );
