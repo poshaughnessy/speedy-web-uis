@@ -509,7 +509,7 @@ small.source {
 .code-ahead {
     img {
         margin-top: 10%;
-        width: 50%;
+        width: 70%;
     }
 }
 
@@ -540,7 +540,8 @@ small.source {
     clear: left;
     left: 50%;
     margin-top: 1.5em;
-    min-width: 50%;
+    min-width: 70%;
+    padding-bottom: 2em;
 
     .demo {
         margin-bottom: 3em;
@@ -549,28 +550,50 @@ small.source {
         text-align: left;
 
         img {
-            width: 25%;
+            width: 35%;
             float: left;
         }
 
         h4 {
+            font-size: 1.4em;
             white-space: nowrap;
         }
 
         h4, p {
             text-align: left;
             margin-bottom: 0.5em;
-            padding-left: 30%;
+            padding-left: 40%;
         }
 
         p {
+            font-size: 1.2em;
+        }
 
-            font-size: 0.9em;
+    }
 
-            &.video {
-                font-size: 0.7em;
+    &.smaller {
+
+        min-width: 50%;
+
+        padding-bottom: 1em;
+
+        .demo {
+
+            img {
+                width: 25%;
             }
 
+            h4 {
+                font-size: 1em;
+            }
+
+            p {
+                font-size: 0.9em;
+
+                &.video {
+                    font-size: 0.7em;
+                }
+            }
         }
 
     }
