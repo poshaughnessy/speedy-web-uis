@@ -1,6 +1,6 @@
 (function() {
 
-    // Create a CSS3D renderer
+    // Create a WebGL renderer
 
     var renderer = new THREE.WebGLRenderer({ antialias: true });
 
@@ -40,13 +40,32 @@
     var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
     scene.add( ambientLight );
 
-    // Cubes
+    // Dinosaur
 
-    //TODO
+    var loader = new THREE.JSONLoader();
+
+    var mesh;
+
+    loader.load('../models/trex/trex.js', function(geometry, materials) {
+
+        mesh = new THREE.Mesh( geometry,
+                new THREE.MeshFaceMaterial( materials ) );
+
+        mesh.scale.set(10, 10, 10);
+        mesh.rotation.y = Math.PI / 2;
+        mesh.position.set( 0, 0, 0 );
+
+        scene.add( mesh );
+
+        animate();
+
+    });
 
     // Animate
 
     var animate = function() {
+
+        mesh.rotation.y += 0.02;
 
         renderer.render( scene, camera );
 

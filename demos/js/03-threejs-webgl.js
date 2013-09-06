@@ -1,6 +1,6 @@
 (function() {
 
-    // Create a CSS3D renderer
+    // Create a WebGL renderer
 
     // Add generated <canvas> to page
 
@@ -12,7 +12,7 @@
 
     // Let there be light
 
-    // Cubes
+    // Dinosaur
 
     // Animate
 

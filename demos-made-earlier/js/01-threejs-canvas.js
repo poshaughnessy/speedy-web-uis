@@ -1,12 +1,16 @@
 (function() {
 
     // Create a Canvas renderer
+
     var renderer = new THREE.WebGLRenderer({ antialias: true });
 
     // Add generated <canvas> to page
+
     var container = document.getElementById('container');
 
     container.appendChild( renderer.domElement );
+
+    // Dimensions for renderer
 
     var width = container.offsetWidth;
     var height = container.offsetHeight;
@@ -14,9 +18,11 @@
     renderer.setSize( container.offsetWidth, container.offsetHeight );
 
     // Make a scene
+
     var scene = new THREE.Scene();
 
-    // Create a camera
+    // Camera, position and add to scene
+
     var camera = new THREE.PerspectiveCamera(
             45,           // Field of View
             width/height, // Aspect ratio
@@ -27,7 +33,6 @@
     camera.position.y = 100;
     camera.position.z = 500;
 
-    // Add it to the scene
     scene.add( camera );
 
     // Let there be light
@@ -36,6 +41,8 @@
     scene.add( ambientLight );
 
     // Cube
+
+    //TODO
 
     // Animate
 
