@@ -2,12 +2,11 @@
 
     // Create a CSS3D renderer
 
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var renderer = new THREE.CSS3DRenderer();
 
-    // Add generated <canvas> to page
+    // Add generated element to page
 
     var container = document.getElementById('container');
-
     container.appendChild( renderer.domElement );
 
     // Dimensions for renderer
@@ -31,7 +30,7 @@
     );
 
     camera.position.y = 100;
-    camera.position.z = 500;
+    camera.position.z = 800;
 
     scene.add( camera );
 
@@ -40,9 +39,56 @@
     var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
     scene.add( ambientLight );
 
-    // Cubes
+    // Create a block
 
-    //TODO
+    var createBlock = function(x, y, color) {
+
+        var el = document.createElement('div');
+        el.className = 'block';
+        el.style.backgroundColor = color;
+
+        var elTop = document.createElement('div');
+        elTop.className = 'side top';
+        el.appendChild( elTop );
+
+        var elLeft = document.createElement('div');
+        elLeft.className = 'side left';
+        el.appendChild( elLeft );
+
+        var elBottom = document.createElement('div');
+        elBottom.className = 'side bottom';
+        el.appendChild( elBottom );
+
+        var elRight = document.createElement('div');
+        elRight.className = 'side right';
+        el.appendChild( elRight );
+
+        var obj = new THREE.CSS3DObject( el );
+        obj.position.set( x, y, 0 );
+        scene.add( obj );
+
+    };
+
+    // Set up blocks
+
+    var BLOCK_SIZE = 100;
+
+    createBlock( 0, 0, 'red' );
+    createBlock( 0, BLOCK_SIZE, 'blue' );
+    createBlock( BLOCK_SIZE, BLOCK_SIZE, 'green' );
+    createBlock( 0, BLOCK_SIZE * 2, 'yellow' );
+
+    // Controls
+
+    var controls = new THREE.TrackballControls( camera, renderer.domElement );
+
+
+    // Stats
+
+    var stats = new Stats();
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '0px';
+    container.appendChild( stats.domElement );
 
     // Animate
 
@@ -52,6 +98,12 @@
 
         requestAnimationFrame( animate );
 
+        controls.update();
+
+        stats.update();
+
     };
+
+    animate();
 
 })();

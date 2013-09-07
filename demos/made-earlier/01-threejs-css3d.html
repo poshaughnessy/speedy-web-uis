@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Demo</title>
-    <script src="../live-code/js/lib/three.js"></script>
-    <script src="../live-code/js/lib/Detector.js"></script>
+    <script src="../../js/lib/three.js"></script>
+    <script src="../../js/lib/CSS3DRenderer.js"></script>
+    <script src="../../js/lib/TrackballControls.js"></script>
+    <script src="../../js/lib/stats.min.js"></script>
     <style>
         html, body, #container {
             height: 100%;
@@ -11,6 +13,56 @@
             padding: 0;
             overflow: hidden;
         }
+        .block {
+            width: 100px;
+            height: 100px;
+        }
+        .block .side {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            background-color: #ccc;
+        }
+        .block .top {
+            top: 0;
+            left: 0;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            -moz-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+        }
+
+        .block .left {
+            width: 50px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            -moz-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+        }
+
+        .block .bottom {
+            top: 100px;
+            left: 0;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            -moz-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+        }
+
+        .block .right {
+            width: 50px;
+            height: 100px;
+            top: 0;
+            left: 100px;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            -moz-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+        }
+
     </style>
 </head>
 <body>
