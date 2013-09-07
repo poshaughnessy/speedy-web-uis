@@ -493,3 +493,12 @@ small.source {
     margin-bottom: 1em; }
   .slide.concluding-thoughts ul li:nth-child(odd) {
     color: #666; }
+.slide .smiley {
+  clear: left;
+  padding-top: 2em; }
+  .slide .smiley span {
+    display: block;
+    font-size: 1.5em;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg); }
