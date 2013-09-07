@@ -416,6 +416,8 @@ small.source {
   width: 100%;
   height: 80%;
   position: relative; }
+.slide #container-webgl {
+  height: 70%; }
 .slide.threejs-css3d .block {
   width: 100px;
   height: 100px; }
