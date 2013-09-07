@@ -111,8 +111,6 @@ Demos.demos.push(
 
                 animate();
 
-            },
-
-            object: null
+            }
 
         });

@@ -82,7 +82,6 @@
 
     var controls = new THREE.TrackballControls( camera, renderer.domElement );
 
-
     // Stats
 
     var stats = new Stats();

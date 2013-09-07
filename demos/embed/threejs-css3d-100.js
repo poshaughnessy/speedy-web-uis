@@ -266,8 +266,6 @@ Demos.demos.push(
 
                 }
 
-            },
-
-            object: null
+            }
 
         });
