@@ -271,10 +271,10 @@ ul {
   margin-top: 1em; }
   ul li {
     font-size: 1.8em;
-    line-height: 2em; }
+    margin-bottom: 1em; }
   ul.smaller li {
     font-size: 1.5em;
-    line-height: 1.8em; }
+    margin-bottom: 0.8em; }
 
 .centre-wrap {
   position: relative;
@@ -446,29 +446,26 @@ small.source {
   .slide .demos.smaller {
     min-width: 50%;
     max-width: 75%;
-    padding-bottom: 1em; }
+    padding-bottom: 0; }
     .slide .demos.smaller .demo img {
       width: 20%; }
     .slide .demos.smaller .demo h4, .slide .demos.smaller .demo p {
       padding-left: 25%; }
     .slide .demos.smaller .demo h4 {
-      font-size: 0.9em; }
+      font-size: 1em; }
     .slide .demos.smaller .demo p {
       font-size: 0.9em; }
       .slide .demos.smaller .demo p.video {
         font-size: 0.7em; }
 .slide .demos + * {
   clear: left; }
-.slide.many-more h2 {
+.slide.header-and-para h2 {
   margin-top: 20%; }
-.slide.many-more p {
+.slide.header-and-para p {
   margin-top: 1em;
   font-size: 1.6em; }
-.slide.live-code h3 {
-  margin: 4em 0 1em 0;
-  font-style: italic;
-  font-size: 1.4em; }
 .slide.live-code p {
+  margin-top: 4em;
   font-size: 1.4em; }
   .slide.live-code p.link {
     font-size: 1.6em; }
@@ -476,3 +473,10 @@ small.source {
   margin-top: 4em; }
   .slide.live-code .made-earlier p {
     font-size: 0.9em; }
+.slide.threejs-webgl h3 {
+  margin: 3em 0 1em 0;
+  font-style: italic;
+  font-size: 1.4em; }
+.slide.concluding-thoughts ul {
+  margin-top: 2em;
+  text-align: left; }

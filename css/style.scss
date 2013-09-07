@@ -338,12 +338,12 @@ ul {
 
     li {
         font-size: 1.8em;
-        line-height: 2em;
+        margin-bottom: 1em;
     }
 
     &.smaller li {
         font-size: 1.5em;
-        line-height: 1.8em;
+        margin-bottom: 0.8em;
     }
 }
 
@@ -595,7 +595,7 @@ small.source {
             min-width: 50%;
             max-width: 75%;
 
-            padding-bottom: 1em;
+            padding-bottom: 0;
 
             .demo {
 
@@ -608,7 +608,7 @@ small.source {
                 }
 
                 h4 {
-                    font-size: 0.9em;
+                    font-size: 1em;
                 }
 
                 p {
@@ -628,7 +628,7 @@ small.source {
         clear: left;
     }
 
-    &.many-more {
+    &.header-and-para {
         h2 {
             margin-top: 20%;
         }
@@ -640,13 +640,8 @@ small.source {
 
     &.live-code {
 
-        h3 {
-            margin: 4em 0 1em 0;
-            font-style: italic;
-            font-size: 1.4em;
-        }
-
         p {
+            margin-top: 4em;
             font-size: 1.4em;
 
             &.link {
@@ -662,6 +657,23 @@ small.source {
             }
         }
 
+    }
+
+    &.threejs-webgl {
+
+        h3 {
+            margin: 3em 0 1em 0;
+            font-style: italic;
+            font-size: 1.4em;
+        }
+
+    }
+
+    &.concluding-thoughts {
+        ul {
+            margin-top: 2em;
+            text-align: left;
+        }
     }
 
 }
