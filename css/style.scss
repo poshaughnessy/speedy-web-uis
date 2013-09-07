@@ -669,10 +669,29 @@ small.source {
 
     }
 
+    &.next-time {
+        ul {
+            margin-top: 3em;
+            text-align: left;
+
+            li {
+                margin-bottom: 2em;
+            }
+        }
+    }
+
     &.concluding-thoughts {
         ul {
-            margin-top: 2em;
+            margin-top: 3em;
             text-align: left;
+
+            li {
+                margin-bottom: 1em;
+            }
+
+            li:nth-child(odd) {
+                color: #666;
+            }
         }
     }
 

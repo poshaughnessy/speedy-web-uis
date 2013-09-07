@@ -477,6 +477,15 @@ small.source {
   margin: 3em 0 1em 0;
   font-style: italic;
   font-size: 1.4em; }
-.slide.concluding-thoughts ul {
-  margin-top: 2em;
+.slide.next-time ul {
+  margin-top: 3em;
   text-align: left; }
+  .slide.next-time ul li {
+    margin-bottom: 2em; }
+.slide.concluding-thoughts ul {
+  margin-top: 3em;
+  text-align: left; }
+  .slide.concluding-thoughts ul li {
+    margin-bottom: 1em; }
+  .slide.concluding-thoughts ul li:nth-child(odd) {
+    color: #666; }
