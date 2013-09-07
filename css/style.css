@@ -473,12 +473,16 @@ small.source {
   margin-top: 4em; }
   .slide.live-code .made-earlier p {
     font-size: 0.9em; }
+.slide.threejs-css3d-results ul {
+  margin: 3em auto 0 auto;
+  max-width: 80%; }
 .slide.threejs-webgl h3 {
   margin: 3em 0 1em 0;
   font-style: italic;
   font-size: 1.4em; }
 .slide.next-time ul {
-  margin-top: 3em;
+  margin: 3em auto 0 auto;
+  max-width: 80%;
   text-align: left; }
   .slide.next-time ul li {
     margin-bottom: 2em; }

@@ -46,7 +46,7 @@
 
     var mesh;
 
-    loader.load('../models/trex/trex.js', function(geometry, materials) {
+    loader.load('../../models/trex/trex.js', function(geometry, materials) {
 
         mesh = new THREE.Mesh( geometry,
                 new THREE.MeshFaceMaterial( materials ) );

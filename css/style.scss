@@ -659,6 +659,13 @@ small.source {
 
     }
 
+    &.threejs-css3d-results {
+        ul {
+            margin: 3em auto 0 auto;
+            max-width: 80%;
+        }
+    }
+
     &.threejs-webgl {
 
         h3 {
@@ -671,7 +678,8 @@ small.source {
 
     &.next-time {
         ul {
-            margin-top: 3em;
+            margin: 3em auto 0 auto;
+            max-width: 80%;
             text-align: left;
 
             li {
