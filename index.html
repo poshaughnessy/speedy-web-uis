@@ -29,10 +29,15 @@
     <script src="js/lib/jquery-1.9.1.js"></script>
     <script src="js/lib/three.js"></script>
     <script src="js/lib/Detector.js"></script>
-    <script src="js/lib/hasAttr.js"></script>
-    <script src="js/lib/FlyControlsMod.js"></script>
-    <!--<script src="js/demos/dinosaur.js"></script>-->
-    <!--<script src="js/demos.js"></script>-->
+    <script src="js/lib/stats.min.js"></script>
+    <script src="js/lib/tween.min.js"></script>
+    <script src="js/lib/CSS3DRenderer.js"></script>
+    <script src="js/lib/TrackballControls.js"></script>
+    <script src="js/lib/CustomTrackballControls.js"></script>
+    <script src="js/embedded-demos.js"></script>
+    <script src="demos/embed/js/threejs-webgl.js"></script>
+    <script src="demos/embed/js/threejs-css3d.js"></script>
+    <script src="demos/embed/js/threejs-css3d-100.js"></script>
     <script src="js/slides.js"></script>
     <script src="js/setup.js"></script>
     <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
@@ -240,7 +245,8 @@
             <div class="slide threejs-webgl">
                 <div class="contents">
                     <h2>Three.js?</h2>
-                    <iframe src="demos/embed/threejs-webgl.html" width="80%" height="70%"></iframe>
+                    <!--<iframe src="demos/embed/threejs-webgl.html" width="80%" height="70%"></iframe>-->
+                    <div id="container-webgl" class="demo-container"></div>
                     <p>Three.js for WebGL (desktop-focussed):</p>
                     <p><a href="http://bit.ly/third-dimension">http://bit.ly/third-dimension</a></p>
                 </div>
@@ -319,11 +325,11 @@
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="slide threejs-css3d">
                 <div class="contents">
                     <h2>One I made earlier</h2>
                     <small>(You can spin it around)</small>
-                    <iframe src="demos/made-earlier/01-threejs-css3d.html" width="100%" height="80%"></iframe>
+                    <div id="container-css3d" class="demo-container"></div>
                 </div>
             </div>
 
@@ -345,10 +351,10 @@
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="slide threejs-css3d-100">
                 <div class="contents">
                     <h2>Taking it a bit further</h2>
-                    <iframe src="demos/embed/threejs-css3d-100.html" width="100%" height="80%"></iframe>
+                    <div id="container-css3d-100" class="demo-container"></div>
                 </div>
             </div>
 

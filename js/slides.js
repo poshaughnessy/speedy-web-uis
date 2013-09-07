@@ -356,7 +356,7 @@ var Slides = function (demos) {
                 // Added by Peter
                 if( this.current !== was ) this.slideChanged();
             } else {
-                this.slideShowChanged();
+                this.slideChanged();
             }
         },
         prev: function () {
@@ -369,7 +369,7 @@ var Slides = function (demos) {
                 // Added by Peter
                 if( this.current !== was ) this.slideChanged();
             } else {
-                this.slideShowChanged();
+                this.slideChanged();
             }
 
         },
@@ -449,19 +449,18 @@ var Slides = function (demos) {
         // Added by Peter for integration with demos
         slideChanged : function() {
 
+            var self = this;
+
+            window.setTimeout(function() {
+                if( demos ) {
+                    demos.onSlide(self.current - 1);
+                }
+            }, 250);
+            /*
             if( demos ) {
                 demos.onSlide(this.current - 1);
             }
-
-            this.autoSlides();
-
-        },
-        // Added by Peter
-        slideShowChanged : function() {
-
-            if( demos ) {
-                demos.onSlideShowChange();
-            }
+            */
 
             this.autoSlides();
 

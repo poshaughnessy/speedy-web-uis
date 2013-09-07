@@ -1,76 +1,84 @@
-(function() {
+Demos.demos.push(
+        {
+            id: 'threejs-webgl',
 
-    // Create a WebGL renderer
+            constructor: function() {
 
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+                // Create a WebGL renderer
 
-    // Add generated <canvas> to page
+                var renderer = new THREE.WebGLRenderer({ antialias: true });
 
-    var container = document.getElementById('container');
+                // Add generated <canvas> to page
 
-    container.appendChild( renderer.domElement );
+                var container = document.getElementById('container-webgl');
 
-    // Dimensions for renderer
+                container.appendChild( renderer.domElement );
 
-    var width = container.offsetWidth;
-    var height = container.offsetHeight;
+                // Dimensions for renderer
 
-    renderer.setSize( container.offsetWidth, container.offsetHeight );
+                var width = container.offsetWidth;
+                var height = container.offsetHeight;
 
-    // Make a scene
+                renderer.setSize( width, height );
 
-    var scene = new THREE.Scene();
+                // Make a scene
 
-    // Camera, position and add to scene
+                var scene = new THREE.Scene();
 
-    var camera = new THREE.PerspectiveCamera(
-            45,           // Field of View
-            width/height, // Aspect ratio
-            1,            // zNear
-            10000         // zFar
-    );
+                // Camera, position and add to scene
 
-    camera.position.y = 100;
-    camera.position.z = 500;
+                var camera = new THREE.PerspectiveCamera(
+                        45,           // Field of View
+                        width/height, // Aspect ratio
+                        1,            // zNear
+                        10000         // zFar
+                );
 
-    scene.add( camera );
+                camera.position.y = 100;
+                camera.position.z = 500;
 
-    // Let there be light
+                scene.add( camera );
 
-    var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
-    scene.add( ambientLight );
+                // Let there be light
 
-    // Dinosaur
+                var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
+                scene.add( ambientLight );
 
-    var loader = new THREE.JSONLoader();
+                // Dinosaur
 
-    var mesh;
+                var loader = new THREE.JSONLoader();
 
-    loader.load('../../models/trex/trex.js', function(geometry, materials) {
+                var mesh;
 
-        mesh = new THREE.Mesh( geometry,
-                new THREE.MeshFaceMaterial( materials ) );
+                loader.load('../../models/trex/trex.js', function(geometry, materials) {
 
-        mesh.scale.set(10, 10, 10);
-        mesh.rotation.y = Math.PI / 2;
-        mesh.position.set( 0, 0, 0 );
+                    mesh = new THREE.Mesh( geometry,
+                            new THREE.MeshFaceMaterial( materials ) );
 
-        scene.add( mesh );
+                    mesh.scale.set(10, 10, 10);
+                    mesh.rotation.y = Math.PI / 2;
+                    mesh.position.set( 0, 0, 0 );
 
-        animate();
+                    scene.add( mesh );
 
-    });
+                    animate();
 
-    // Animate
+                });
 
-    var animate = function() {
+                // Animate
 
-        mesh.rotation.y += 0.02;
+                var animate = function() {
 
-        renderer.render( scene, camera );
+                    mesh.rotation.y += 0.02;
 
-        requestAnimationFrame( animate );
+                    renderer.render( scene, camera );
 
-    };
+                    requestAnimationFrame( animate );
 
-})();
+                };
+
+            },
+
+            object: null
+
+        });

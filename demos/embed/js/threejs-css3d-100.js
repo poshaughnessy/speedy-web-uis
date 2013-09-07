@@ -1,291 +1,273 @@
-var CAMERA_POS_DEFAULT = {x: 0, y: -180, z: 1000},
-    CAMERA_FALL_START_Z = 3000,
-    BLOCK_SIZE = 180,
-    BLOCK_MARGIN = 30;
+Demos.demos.push(
+        {
+            id: 'threejs-css3d-100',
 
-var camera,
-    scene,
-    renderer,
-    controls,
-    stats,
-    objects = [];
+            constructor: function() {
 
-init();
-animate();
+                var CAMERA_POS_DEFAULT = {x: 0, y: -180, z: 1000},
+                    CAMERA_FALL_START_Z = 3000,
+                    BLOCK_SIZE = 180,
+                    BLOCK_MARGIN = 30;
 
-function init() {
+                var camera,
+                    scene,
+                    renderer,
+                    controls,
+                    stats,
+                    objects = [],
+                    width,
+                    height;
 
-    camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 5000 );
+                init();
+                animate();
 
-    camera.position.x = CAMERA_POS_DEFAULT.x;
-    camera.position.y = CAMERA_POS_DEFAULT.y;
-    camera.position.z = CAMERA_FALL_START_Z;
+                function init() {
 
-    // Keep camera rotation static
-    camera.rotationAutoUpdate = false;
+                    var container = document.getElementById('container-css3d-100');
 
-    scene = new THREE.Scene();
+                    width = container.offsetWidth;
+                    height = container.offsetHeight;
 
-    setupBlocks();
+                    camera = new THREE.PerspectiveCamera( 45, width / height, 1, 5000 );
 
-    setupInitialAnimation();
+                    camera.position.x = CAMERA_POS_DEFAULT.x;
+                    camera.position.y = CAMERA_POS_DEFAULT.y;
+                    camera.position.z = CAMERA_FALL_START_Z;
 
-    setupBlockClicks();
+                    // Keep camera rotation static
+                    camera.rotationAutoUpdate = false;
 
-    renderer = new THREE.CSS3DRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    renderer.domElement.style.position = 'absolute';
-    document.getElementById('container').appendChild(renderer.domElement);
+                    scene = new THREE.Scene();
 
-    controls = new THREE.TrackballControls( camera, renderer.domElement );
-    controls.noRotate = true;
-    controls.noPan = false;
-    controls.panSpeed = 0.3;
-    controls.zoomSpeed = 1.0;
+                    setupBlocks();
 
-    stats = new Stats();
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.bottom = '0px';
-    stats.domElement.style.right = '0px';
-    document.getElementById('container').appendChild( stats.domElement );
+                    setupInitialAnimation();
 
-    window.addEventListener( 'resize', onWindowResize, false );
+                    setupBlockClicks();
 
-    $('a.close').click(function() {
+                    renderer = new THREE.CSS3DRenderer();
+                    renderer.setSize( width, height );
+                    renderer.domElement.style.position = 'absolute';
 
-        var cameraZoomOutTween = new TWEEN.Tween( camera.position )
-                .to( { z: CAMERA_POS_DEFAULT.z, y: camera.position.y - 90 }, 1000)
-                .easing( TWEEN.Easing.Quadratic.In);
+                    container.appendChild(renderer.domElement);
 
-        cameraZoomOutTween.start();
+                    controls = new THREE.CustomTrackballControls( camera, renderer.domElement );
+                    controls.noRotate = true;
+                    controls.noPan = false;
+                    controls.panSpeed = 0.3;
+                    controls.zoomSpeed = 1.0;
 
-        $('#container').removeClass('grey');
+                    stats = new Stats();
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.bottom = '0px';
+                    stats.domElement.style.right = '0px';
 
-        $('.quiz').fadeOut('fast');
-    });
+                    container.appendChild( stats.domElement );
 
-}
-
-function setupBlocks() {
-
-    createBlockObject( -BLOCK_SIZE - BLOCK_MARGIN, 0, 'orange', 'leftarrow', '←' );
-
-    createBlockObject( -BLOCK_SIZE - BLOCK_MARGIN, -BLOCK_SIZE - BLOCK_MARGIN, 'yellow' );
-
-    createBlockObject( 0, 0, 'blue', null, '<img src="img/profile.png">' );
-
-    createBlockObject( 0, -BLOCK_SIZE - BLOCK_MARGIN, 'green', 'downarrow', '↓' );
-
-    createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, -BLOCK_SIZE - BLOCK_MARGIN, 'orange' );
-
-    createBlockObject( 2 * (BLOCK_SIZE + BLOCK_MARGIN), -BLOCK_SIZE - BLOCK_MARGIN, 'blue' );
-
-    createBlockObject( 0, -2 * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
-
-    createBlockObject( 0, -3 * (BLOCK_SIZE + BLOCK_MARGIN), 'blue' );
-
-    createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, -3 * (BLOCK_SIZE + BLOCK_MARGIN), 'green' );
-
-    createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, -4 * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
-
-    // Right, let's create *loads* of blocks...
-
-    for( var i=0; i < 10; i++ ) {
-        createBlockObject( 0, (-4-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'blue' );
-    }
-
-    for( i=0; i < 10; i++ ) {
-        createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
-    }
-
-    for( i=0; i < 10; i++ ) {
-        createBlockObject( 2 * (BLOCK_SIZE + BLOCK_MARGIN), (-4-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'green' );
-    }
-
-    for( i=0; i < 20; i++ ) {
-        createBlockObject( 3 * (BLOCK_SIZE + BLOCK_MARGIN), (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'orange' );
-    }
-
-    for( i=0; i < 20; i++ ) {
-        createBlockObject( 4 * (BLOCK_SIZE + BLOCK_MARGIN), (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'blue' );
-    }
-
-    for( i=0; i < 20; i++ ) {
-        createBlockObject( 5 * (BLOCK_SIZE + BLOCK_MARGIN), (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
-    }
-
-
-}
-
-function setupInitialAnimation() {
-
-    var cameraFallTween = new TWEEN.Tween( camera.position )
-            .to( { z: CAMERA_POS_DEFAULT.z }, 2000)
-            .easing( TWEEN.Easing.Quadratic.InOut );
-
-    cameraFallTween.start();
-
-}
-
-function setupBlockClicks() {
-
-    for( var i=0; i < objects.length; i++ ) {
-
-        var obj = objects[i];
-
-        var el = obj.element;
-
-        $(el).click(function(obj) {
-            return function() {
-
-                if( cameraFocusedOnBlock(obj) ) {
-
-                    // Dive in...
-
-                    // XXX Eugh, duplicated from CSS...
-                    var colour = '#46e1f8';
-                    if( obj.data.colour === 'orange' ) {
-                        colour = '#f88d46';
-                    } else if( obj.data.colour === 'green' ) {
-                        colour = '#66cc66';
-                    } else if( obj.data.colour === 'yellow' ) {
-                        colour = '#ffcc33';
-                    }
-
-                    $('#container').addClass('grey');
-
-                    var cameraZoomTween = new TWEEN.Tween( camera.position )
-                            .to( { z: 5, y: obj.position.y }, 1000)
-                            .easing( TWEEN.Easing.Quadratic.In);
-
-                    cameraZoomTween.start();
-
-                } else {
-
-                    animateBlockPress(obj);
-                    centerBlock(obj);
+                    window.addEventListener( 'resize', onWindowResize, false );
 
                 }
 
-            }
-        }(obj));
+                function setupBlocks() {
 
-    }
+                    createBlockObject( -BLOCK_SIZE - BLOCK_MARGIN, 0, 'orange', 'leftarrow', '←' );
 
-}
+                    createBlockObject( -BLOCK_SIZE - BLOCK_MARGIN, -BLOCK_SIZE - BLOCK_MARGIN, 'yellow' );
 
-function animateBlockPress(object) {
+                    createBlockObject( 0, 0, 'blue', null, '<img src="img/profile.png">' );
 
-    var tween = new TWEEN.Tween( object.position )
-            .to( { z: -80 }, 250 )
-            .easing( TWEEN.Easing.Quadratic.In );
+                    createBlockObject( 0, -BLOCK_SIZE - BLOCK_MARGIN, 'green', 'downarrow', '↓' );
 
-    var tweenBack = new TWEEN.Tween( object.position )
-            .to( { z: 0 }, 250 )
-            .easing( TWEEN.Easing.Quadratic.In );
+                    createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, -BLOCK_SIZE - BLOCK_MARGIN, 'orange' );
 
-    console.log('camera rotation', camera.rotation);
+                    createBlockObject( 2 * (BLOCK_SIZE + BLOCK_MARGIN), -BLOCK_SIZE - BLOCK_MARGIN, 'blue' );
 
-    tween.chain( tweenBack );
+                    createBlockObject( 0, -2 * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
 
-    tween.start();
+                    createBlockObject( 0, -3 * (BLOCK_SIZE + BLOCK_MARGIN), 'blue' );
 
-}
+                    createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, -3 * (BLOCK_SIZE + BLOCK_MARGIN), 'green' );
 
-function centerBlock(object) {
+                    createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, -4 * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
 
-    console.log('object', object);
+                    // Right, let's create *loads* of blocks...
 
-    var tween = new TWEEN.Tween( camera.position )
-            .to( { x: object.position.x, y: object.position.y - 90, z: CAMERA_POS_DEFAULT.z }, 500)
-            .easing( TWEEN.Easing.Quadratic.InOut );
+                    for( var i=0; i < 10; i++ ) {
+                        createBlockObject( 0, (-4-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'blue' );
+                    }
 
-    tween.start();
+                    for( i=0; i < 10; i++ ) {
+                        createBlockObject( BLOCK_SIZE + BLOCK_MARGIN, (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
+                    }
 
-}
+                    for( i=0; i < 10; i++ ) {
+                        createBlockObject( 2 * (BLOCK_SIZE + BLOCK_MARGIN), (-4-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'green' );
+                    }
 
-function cameraFocusedOnBlock(object) {
+                    for( i=0; i < 20; i++ ) {
+                        createBlockObject( 3 * (BLOCK_SIZE + BLOCK_MARGIN), (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'orange' );
+                    }
 
-    var THRESHOLD = 1;
+                    for( i=0; i < 20; i++ ) {
+                        createBlockObject( 4 * (BLOCK_SIZE + BLOCK_MARGIN), (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'blue' );
+                    }
 
-    return (camera.position.z <= CAMERA_POS_DEFAULT.z + THRESHOLD) &&
-           (camera.position.x >= object.position.x - THRESHOLD) &&
-           (camera.position.x <= object.position.x + THRESHOLD) &&
-           (camera.position.y >= object.position.y - 90 - THRESHOLD) &&
-           (camera.position.y <= object.position.y - 90 + THRESHOLD);
-
-
-}
-
-function createBlockObject( x, y, colour, extraClasses, innerHTML ) {
-
-    var classes = 'block';
-    if( colour ) classes += ' ' + colour;
-    if( extraClasses ) classes += ' ' + extraClasses;
-
-    var el = createBlockElement('div', classes, innerHTML );
-
-    var obj = new THREE.CSS3DObject( el );
-    obj.position.set( x, y, 0 );
-    // XXX temp hack - will prob need our own object representation
-    obj.data = {colour: colour};
-
-    objects.push( obj );
-    scene.add( obj );
-
-}
+                    for( i=0; i < 20; i++ ) {
+                        createBlockObject( 5 * (BLOCK_SIZE + BLOCK_MARGIN), (-5-i) * (BLOCK_SIZE + BLOCK_MARGIN), 'yellow' );
+                    }
 
 
-function createBlockElement( elType, elClass, elHTML ) {
+                }
 
-    var el = document.createElement(elType);
-    el.className = elClass;
-    if( elHTML ) el.innerHTML = elHTML;
+                function setupInitialAnimation() {
 
-    addBlockSides( el );
+                    var cameraFallTween = new TWEEN.Tween( camera.position )
+                            .to( { z: CAMERA_POS_DEFAULT.z }, 2000)
+                            .easing( TWEEN.Easing.Quadratic.InOut );
 
-    return el;
-}
+                    cameraFallTween.start();
 
-function addBlockSides(parentElement) {
+                }
 
-    var elTop = document.createElement('div');
-    elTop.className = 'side top';
-    parentElement.appendChild( elTop );
+                function setupBlockClicks() {
 
-    var elLeft = document.createElement('div');
-    elLeft.className = 'side left';
-    parentElement.appendChild( elLeft );
+                    for( var i=0; i < objects.length; i++ ) {
 
-    var elBottom = document.createElement('div');
-    elBottom.className = 'side bottom';
-    parentElement.appendChild( elBottom );
+                        var obj = objects[i];
 
-    var elRight = document.createElement('div');
-    elRight.className = 'side right';
-    parentElement.appendChild( elRight );
+                        var el = obj.element;
 
-}
+                        $(el).click(function(obj) {
+                            return function() {
 
-function animate() {
+                                animateBlockPress(obj);
+                                centerBlock(obj);
 
-    requestAnimationFrame( animate );
+                            }
+                        }(obj));
 
-    TWEEN.update();
+                    }
 
-    controls.update();
+                }
 
-    stats.update();
+                function animateBlockPress(object) {
 
-    renderer.render( scene, camera );
+                    var tween = new TWEEN.Tween( object.position )
+                            .to( { z: -80 }, 250 )
+                            .easing( TWEEN.Easing.Quadratic.In );
 
-}
+                    var tweenBack = new TWEEN.Tween( object.position )
+                            .to( { z: 0 }, 250 )
+                            .easing( TWEEN.Easing.Quadratic.In );
 
-function onWindowResize() {
+                    console.log('camera rotation', camera.rotation);
 
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+                    tween.chain( tweenBack );
 
-    renderer.setSize( window.innerWidth, window.innerHeight );
+                    tween.start();
 
-}
+                }
+
+                function centerBlock(object) {
+
+                    console.log('object', object);
+
+                    var tween = new TWEEN.Tween( camera.position )
+                            .to( { x: object.position.x, y: object.position.y - 90, z: CAMERA_POS_DEFAULT.z }, 500)
+                            .easing( TWEEN.Easing.Quadratic.InOut );
+
+                    tween.start();
+
+                }
+
+                function cameraFocusedOnBlock(object) {
+
+                    var THRESHOLD = 1;
+
+                    return (camera.position.z <= CAMERA_POS_DEFAULT.z + THRESHOLD) &&
+                           (camera.position.x >= object.position.x - THRESHOLD) &&
+                           (camera.position.x <= object.position.x + THRESHOLD) &&
+                           (camera.position.y >= object.position.y - 90 - THRESHOLD) &&
+                           (camera.position.y <= object.position.y - 90 + THRESHOLD);
+
+
+                }
+
+                function createBlockObject( x, y, colour, extraClasses, innerHTML ) {
+
+                    var classes = 'block';
+                    if( colour ) classes += ' ' + colour;
+                    if( extraClasses ) classes += ' ' + extraClasses;
+
+                    var el = createBlockElement('div', classes, innerHTML );
+
+                    var obj = new THREE.CSS3DObject( el );
+                    obj.position.set( x, y, 0 );
+                    // XXX temp hack - will prob need our own object representation
+                    obj.data = {colour: colour};
+
+                    objects.push( obj );
+                    scene.add( obj );
+
+                }
+
+
+                function createBlockElement( elType, elClass, elHTML ) {
+
+                    var el = document.createElement(elType);
+                    el.className = elClass;
+                    if( elHTML ) el.innerHTML = elHTML;
+
+                    addBlockSides( el );
+
+                    return el;
+                }
+
+                function addBlockSides(parentElement) {
+
+                    var elTop = document.createElement('div');
+                    elTop.className = 'side top';
+                    parentElement.appendChild( elTop );
+
+                    var elLeft = document.createElement('div');
+                    elLeft.className = 'side left';
+                    parentElement.appendChild( elLeft );
+
+                    var elBottom = document.createElement('div');
+                    elBottom.className = 'side bottom';
+                    parentElement.appendChild( elBottom );
+
+                    var elRight = document.createElement('div');
+                    elRight.className = 'side right';
+                    parentElement.appendChild( elRight );
+
+                }
+
+                function animate() {
+
+                    requestAnimationFrame( animate );
+
+                    TWEEN.update();
+
+                    controls.update();
+
+                    stats.update();
+
+                    renderer.render( scene, camera );
+
+                }
+
+                function onWindowResize() {
+
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+
+                    renderer.setSize( width, height );
+
+                }
+
+            },
+
+            object: null
+
+        });

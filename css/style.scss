@@ -544,6 +544,147 @@ small.source {
         }
     }
 
+    .demo-container {
+        width: 100%;
+        height: 80%;
+        position: relative;
+    }
+
+    &.threejs-css3d {
+
+        .block {
+            width: 100px;
+            height: 100px;
+        }
+        .block .side {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            background-color: #ccc;
+        }
+        .block .top {
+            top: 0;
+            left: 0;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            -moz-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+        }
+
+        .block .left {
+            width: 50px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            -moz-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+        }
+
+        .block .bottom {
+            top: 100px;
+            left: 0;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            -moz-transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+            transform: rotateX(-90deg) translateY(25px) translateZ(-25px);
+        }
+
+        .block .right {
+            width: 50px;
+            height: 100px;
+            top: 0;
+            left: 100px;
+            /* side width / 2 = 25px */
+            -webkit-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            -moz-transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+            transform: rotateY(-90deg) translateX(-25px) translateZ(25px);
+        }
+
+    }
+
+    &.threejs-css3d-100 {
+
+        .block {
+            width: 180px;
+            height: 180px;
+            padding: 10px;
+            background-color: #46e1f8;
+            color: #fff;
+        }
+        .block.orange {
+            background-color: #f88d46;
+        }
+        .block.green {
+            background-color: #66cc66;
+        }
+        .block.yellow {
+            background-color: #ffcc33;
+        }
+        .leftarrow {
+            font-size: 5em;
+            text-align: right;
+            line-height: 180px;
+        }
+        .downarrow {
+            font-size: 5em;
+            text-align: center;
+        }
+        .block .side {
+            width: 200px;
+            height: 100px;
+            background-color: #00bed5;
+            position: absolute;
+        }
+        .block.orange .side {
+            background-color: #da732d;
+        }
+        .block.green .side {
+            background-color: #339966;
+        }
+        .block.yellow .side {
+            background-color: #ffb533;
+        }
+        .block .top {
+            top: 0;
+            left: 0;
+            /* side width / 2 = 50px */
+            -webkit-transform: rotateX(-90deg) translateY(50px) translateZ(-50px);
+            -moz-transform: rotateX(-90deg) translateY(50px) translateZ(-50px);
+            transform: rotateX(-90deg) translateY(50px) translateZ(-50px);
+        }
+        .block .left {
+            width: 100px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            /* side width / 2 = 50px */
+            -webkit-transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+            -moz-transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+            transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+        }
+        .block .bottom {
+            top: 200px;
+            left: 0;
+            /* side width / 2 = 50px */
+            -webkit-transform: rotateX(-90deg) translateY(50px) translateZ(-50px);
+            -moz-transform: rotateX(-90deg) translateY(50px) translateZ(-50px);
+            transform: rotateX(-90deg) translateY(50px) translateZ(-50px);
+        }
+        .block .right {
+            width: 100px;
+            height: 200px;
+            top: 0;
+            left: 200px;
+            /* side width / 2 = 50px */
+            -webkit-transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+            -moz-transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+            transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+        }
+
+    }
+
     .demos {
 
         position: relative;

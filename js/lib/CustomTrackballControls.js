@@ -4,7 +4,7 @@
  * Modified by Peter O'Shaughnessy
  */
 
-THREE.TrackballControls = function ( object, domElement ) {
+THREE.CustomTrackballControls = function ( object, domElement ) {
 
 	THREE.EventDispatcher.call( this );
 
