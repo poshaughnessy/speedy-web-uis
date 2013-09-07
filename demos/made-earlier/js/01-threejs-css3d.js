@@ -73,10 +73,10 @@
 
     var BLOCK_SIZE = 100;
 
-    createBlock( 0, 0, 'red' );
-    createBlock( 0, BLOCK_SIZE, 'blue' );
-    createBlock( BLOCK_SIZE, BLOCK_SIZE, 'green' );
-    createBlock( 0, BLOCK_SIZE * 2, 'yellow' );
+    createBlock( 0, 0, '#f88d46' );
+    createBlock( 0, BLOCK_SIZE, '#46e1f8' );
+    createBlock( BLOCK_SIZE, BLOCK_SIZE, '#66cc66' );
+    createBlock( 0, BLOCK_SIZE * 2, '#ffcc33' );
 
     // Controls
 
