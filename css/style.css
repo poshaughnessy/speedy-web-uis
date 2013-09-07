@@ -421,35 +421,49 @@ small.source {
   min-width: 70%;
   padding-bottom: 2em; }
   .slide .demos .demo {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     position: relative;
     left: -50%;
-    text-align: left; }
+    text-align: left;
+    clear: left;
+    /* Clear fix */ }
+    .slide .demos .demo:after {
+      content: "";
+      display: table;
+      clear: both; }
     .slide .demos .demo img {
       width: 35%;
       float: left; }
-    .slide .demos .demo h4 {
-      font-size: 1.4em;
-      white-space: nowrap; }
     .slide .demos .demo h4, .slide .demos .demo p {
       text-align: left;
       margin-bottom: 0.5em;
       padding-left: 40%; }
+    .slide .demos .demo h4 {
+      font-size: 1.4em;
+      white-space: nowrap; }
     .slide .demos .demo p {
       font-size: 1.2em; }
   .slide .demos.smaller {
     min-width: 50%;
+    max-width: 75%;
     padding-bottom: 1em; }
     .slide .demos.smaller .demo img {
-      width: 25%; }
+      width: 20%; }
+    .slide .demos.smaller .demo h4, .slide .demos.smaller .demo p {
+      padding-left: 25%; }
     .slide .demos.smaller .demo h4 {
-      font-size: 1em; }
+      font-size: 0.9em; }
     .slide .demos.smaller .demo p {
       font-size: 0.9em; }
       .slide .demos.smaller .demo p.video {
         font-size: 0.7em; }
 .slide .demos + * {
   clear: left; }
+.slide.many-more h2 {
+  margin-top: 20%; }
+.slide.many-more p {
+  margin-top: 1em;
+  font-size: 1.6em; }
 .slide.live-code h3 {
   margin: 4em 0 1em 0;
   font-style: italic;

@@ -555,25 +555,33 @@ small.source {
         padding-bottom: 2em;
 
         .demo {
-            margin-bottom: 3em;
+            margin-bottom: 2em;
             position: relative;
             left: -50%;
             text-align: left;
+            clear: left;
+
+            /* Clear fix */
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
 
             img {
                 width: 35%;
                 float: left;
             }
 
-            h4 {
-                font-size: 1.4em;
-                white-space: nowrap;
-            }
-
             h4, p {
                 text-align: left;
                 margin-bottom: 0.5em;
                 padding-left: 40%;
+            }
+
+            h4 {
+                font-size: 1.4em;
+                white-space: nowrap;
             }
 
             p {
@@ -585,17 +593,22 @@ small.source {
         &.smaller {
 
             min-width: 50%;
+            max-width: 75%;
 
             padding-bottom: 1em;
 
             .demo {
 
                 img {
-                    width: 25%;
+                    width: 20%;
+                }
+
+                h4, p {
+                    padding-left: 25%;
                 }
 
                 h4 {
-                    font-size: 1em;
+                    font-size: 0.9em;
                 }
 
                 p {
@@ -613,6 +626,16 @@ small.source {
 
     .demos + * {
         clear: left;
+    }
+
+    &.many-more {
+        h2 {
+            margin-top: 20%;
+        }
+        p {
+            margin-top: 1em;
+            font-size: 1.6em;
+        }
     }
 
     &.live-code {
