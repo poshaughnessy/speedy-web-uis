@@ -838,10 +838,25 @@ small.source {
         }
     }
 
+    &.non-optimisations {
+
+        ul.smaller {
+            font-size: 0.8em;
+        }
+
+        .centre-wrap:nth-child(even) {
+            li {
+                color: #666;
+                font-style: italic;
+            }
+        }
+
+    }
+
     &.optimisations {
         h3 {
             font-size: 1.3em;
-            margin-top: 3em;
+            margin-top: 2em;
         }
 
         p {
@@ -863,6 +878,16 @@ small.source {
 
             li {
                 margin-bottom: 2em;
+
+                & > ul {
+                    margin: 1em 0 0 1em;
+                    li {
+                        font-size: 0.9em;
+                        margin-bottom: 1em;
+                        white-space: nowrap;
+                    }
+                }
+
             }
         }
     }
@@ -876,8 +901,9 @@ small.source {
                 margin-bottom: 1em;
             }
 
-            li:nth-child(odd) {
+            li:nth-child(even) {
                 color: #666;
+                font-style: italic;
             }
         }
     }

@@ -461,7 +461,7 @@
                             <ul class="smaller">
                                 <li><strong>20-30</strong> FPS on Desktop (Chrome)</li>
                                 <li><strong>1-2</strong> FPS on iPhone 4 (iOS Safari)</li>
-                                <li><strong>2-5</strong> FPS on Galaxy Nexus (Chrome for Android)</li>
+                                <li><strong>1-3</strong> FPS on Galaxy Nexus (Chrome Beta for Android)</li>
                             </ul>
                         </div>
                         <div class="smiley">
@@ -471,10 +471,43 @@
                 </div>
             </div>
 
+            <div class="slide non-optimisations">
+                <div class="contents">
+                    <h2>'Optimisations' that didn't really help</h2>
+                    <div data-build>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li>Rendering 2D text using ShapeGeometry (see: <a href="http://bit.ly/threejs-shape-geo">bit.ly/threejs-shape-geo</a>)</li>
+                            </ul>
+                        </div>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li>Rendering the text using the CSS3DRenderer, on top of the canvas</li>
+                            </ul>
+                        </div>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li>Applying 2D text textures as a Three.js material (see: <a href="http://bit.ly/threejs-text-texture">bit.ly/threejs-text-texture</a>)</li>
+                            </ul>
+                        </div>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li>Merging the geometries (see: <a href="http://bit.ly/threejs-merge-geo">bit.ly/threejs-merge-geo</a>)</li>
+                            </ul>
+                        </div>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li>Only updating scene on input, rather than continuously (but may help battery life!)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="slide optimisations">
                 <div class="contents">
                     <h2>Key Optimisation 1</h2>
-                    <div data-build>
+                    <div data-build data-slideshow>
                         <div>
                             <h3>Reduce the <em>curve segments</em> for any Three.js-rendered text</h3>
                             <div class="centre-wrap">
@@ -485,6 +518,9 @@ var labelGeometry = new THREE.ShapeGeometry(
                             </div>
                             <p>Default is 12.</p>
                         </div>
+                        <div>
+                            <img src="img/curve-segments-effect.png"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -492,8 +528,9 @@ var labelGeometry = new THREE.ShapeGeometry(
             <div class="slide optimisations">
                 <div class="contents">
                     <h2>Key Optimisation 2</h2>
-                    <div data-build>
+                    <div data-build data-slideshow>
                         <div>
+                            <h3><em>If you don't need z-ordering</em>...</h3>
                             <h3>Disable 'sortObjects' and 'sortElements' on CanvasRenderer</h3>
                             <div class="centre-wrap">
                                 <pre>
@@ -503,26 +540,70 @@ renderer = new THREE.CanvasRenderer();
 <strong>renderer.sortElements = false;</strong>
                                 </pre>
                             </div>
-                            <p><em>If you don't need z-ordering</em>.</p>
+                        </div>
+                        <div>
+                            <img src="img/z-ordering-effect.png"/>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slide threejs-results">
+            <div class="slide no-header">
                 <div class="contents">
-                    <h2>Now...</h2>
+                    <video src="videos/threejs-canvas-text-optimised.m4v" width="80%" controls>
+                    </video>
+                </div>
+            </div>
+
+            <div class="slide threejs-results no-header">
+                <div class="contents">
                     <div data-build>
-                        <div class="centre-wrap">
+                        <div class="centre-wrap current">
                             <ul class="smaller">
-                                <li><strong>50-60</strong> FPS on Desktop (Chrome)</li>
-                                <li><strong>6-10</strong> FPS on iPhone 4 (iOS Safari)</li>
-                                <li><strong>12-20</strong> FPS on Galaxy Nexus (Chrome for Android)</li>
+                                <li><span class="strike-through">20-30</span> <strong>50-60</strong> FPS on Desktop (Chrome)</li>
+                                <li><span class="strike-through">1-2</span> <strong>5-10</strong> FPS on iPhone 4 (iOS Safari)</li>
+                                <li><span class="strike-through">1-3</span> <strong>3-5</strong> FPS on Galaxy Nexus (Chrome Beta for Android)</li>
                             </ul>
                         </div>
                         <div class="smiley">
                             <span>:-|</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Meanwhile...</h2>
+                    <div data-build>
+                        <img src="img/zamblocks-main-screen.png" alt="New design"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Final prototype</h2>
+                    <video src="videos/zamblocks-demo.m4v" width="80%" controls>
+                    </video>
+                </div>
+            </div>
+
+            <div class="slide threejs-results">
+                <div class="contents">
+                    <h2>Final prototype</h2>
+                    <div data-build>
+                        <div class="centre-wrap current">
+                            <ul class="smaller">
+                                <li><strong>55-60</strong> FPS on Desktop (Chrome)</li>
+                                <li><strong>6-10</strong> FPS on iPhone 4 (iOS Safari)</li>
+                                <li><strong>10-15</strong> FPS on Galaxy Nexus (Chrome Beta for Android)</li>
+                            </ul>
+                        </div>
+                        <div class="smiley">
+                            <span>:-|</span>
+                        </div>
+                        <p>NB. iPhone 5 about twice as fast as iPhone 4</p>
                     </div>
                 </div>
             </div>
@@ -570,8 +651,13 @@ renderer = new THREE.CanvasRenderer();
                     <h2>Next time...</h2>
                     <div class="centre-wrap">
                         <ul class="smaller" data-build>
-                            <li>Probably wouldn't use Three.js for mobile (especially for 2D!)</li>
-                            <li>For simple 2D stuff, would ditch libraries &amp; just use Canvas directly</li>
+                            <li>Wouldn't use Three.js for this</em>
+                                <ul>
+                                    <li>It's better suited to desktop for now</li>
+                                    <li>And it's meant for 3D!</li>
+                                </ul>
+                            </li>
+                            <li>For simple 2D stuff like this, would probably ditch libraries &amp; just use Canvas directly</li>
                         </ul>
                     </div>
                 </div>

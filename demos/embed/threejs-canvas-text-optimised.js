@@ -291,7 +291,7 @@ Demos.demos.push(
                         sidesMaterial // Back
                     ];
 
-                    var geometry = new THREE.CubeGeometry( 180, 180, 100 );
+                    var geometry = new THREE.CubeGeometry( 180, 180, 50 );
 
                     var obj = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial(materials) );
 

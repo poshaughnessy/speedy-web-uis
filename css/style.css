@@ -598,9 +598,14 @@ small.source {
   width: 100%; }
 .slide.no-header .contents > *:nth-child(1) {
   margin-top: 5%; }
+.slide.non-optimisations ul.smaller {
+  font-size: 0.8em; }
+.slide.non-optimisations .centre-wrap:nth-child(even) li {
+  color: #666;
+  font-style: italic; }
 .slide.optimisations h3 {
   font-size: 1.3em;
-  margin-top: 3em; }
+  margin-top: 2em; }
 .slide.optimisations p {
   font-size: 1.3em; }
 .slide.optimisations pre {
@@ -613,13 +618,20 @@ small.source {
   text-align: left; }
   .slide.next-time ul li {
     margin-bottom: 2em; }
+    .slide.next-time ul li > ul {
+      margin: 1em 0 0 1em; }
+      .slide.next-time ul li > ul li {
+        font-size: 0.9em;
+        margin-bottom: 1em;
+        white-space: nowrap; }
 .slide.concluding-thoughts ul {
   margin-top: 3em;
   text-align: left; }
   .slide.concluding-thoughts ul li {
     margin-bottom: 1em; }
-  .slide.concluding-thoughts ul li:nth-child(odd) {
-    color: #666; }
+  .slide.concluding-thoughts ul li:nth-child(even) {
+    color: #666;
+    font-style: italic; }
 .slide.credits p {
   font-style: italic; }
 .slide.credits ul.smaller {
