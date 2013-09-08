@@ -818,7 +818,7 @@ small.source {
 
     }
 
-    &.threejs-results {
+    &.performance-results {
         ul {
             margin: 3em auto 0 auto;
             max-width: 80%;
@@ -876,18 +876,25 @@ small.source {
 
     &.next-time {
         ul {
-            margin: 3em auto 0 auto;
+            margin: 2em auto 0 auto;
             max-width: 80%;
             text-align: left;
 
-            li {
-                margin-bottom: 2em;
+            li:nth-child(even) {
+                color: #666;
+                font-style: italic;
+            }
 
-                & > ul {
+            li {
+                margin-bottom: 1.5em;
+
+                & > ul.sublist {
                     margin: 1em 0 0 1em;
                     li {
+                        color: #313131;
+                        font-style: normal;
                         font-size: 0.9em;
-                        margin-bottom: 1em;
+                        margin-bottom: 0.5em;
                         white-space: nowrap;
                     }
                 }

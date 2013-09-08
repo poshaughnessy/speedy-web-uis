@@ -47,20 +47,20 @@ createBlock(8, YELLOW, BLOCK_SIZE * 5, BLOCK_SIZE * 4);
 createBlock(9, ORANGE, BLOCK_SIZE * 6, BLOCK_SIZE * 4);
 createBlock(10, BLUE, BLOCK_SIZE * 7, BLOCK_SIZE * 4);
 
-for( var i=0; i < 10; i++ ) {
+for( var i=0; i < 20; i++ ) {
     createBlock(11+i, ORANGE, BLOCK_SIZE * 4, BLOCK_SIZE * (5+i));
 }
 
-for( i=0; i < 10; i++ ) {
-    createBlock(21+i, BLUE, BLOCK_SIZE * 5, BLOCK_SIZE * (5+i));
+for( i=0; i < 20; i++ ) {
+    createBlock(31+i, BLUE, BLOCK_SIZE * 5, BLOCK_SIZE * (5+i));
 }
 
-for( i=0; i < 10; i++ ) {
-    createBlock(31+i, GREEN, BLOCK_SIZE * 6, BLOCK_SIZE * (5+i));
+for( i=0; i < 20; i++ ) {
+    createBlock(51+i, GREEN, BLOCK_SIZE * 6, BLOCK_SIZE * (5+i));
 }
 
-for( i=0; i < 10; i++ ) {
-    createBlock(41+i, YELLOW, BLOCK_SIZE * 7, BLOCK_SIZE * (5+i));
+for( i=0; i < 30; i++ ) {
+    createBlock(71+i, YELLOW, BLOCK_SIZE * 7, BLOCK_SIZE * (5+i));
 }
 
 // Stats
@@ -94,15 +94,6 @@ for( i=0; i < blocks.length; i++ ) {
 
     graphics.endFill();
 
-    // text label
-
-    block.label = new PIXI.Text(''+block.id, {fill: '#FFFFFF'});
-
-    block.label.position.x = 45;
-    block.label.position.y = 35;
-
-    graphics.addChild(block.label);
-
     // click
 
     graphics.interactive = true;
@@ -129,6 +120,16 @@ for( i=0; i < blocks.length; i++ ) {
         };
     })(block);
 
+    // text label
+
+    block.label = new PIXI.Text(''+block.id, {fill: '#FFFFFF'});
+
+    block.label.position.x = 45;
+    block.label.position.y = 35;
+
+    graphics.addChild(block.label);
+
+
     container.addChild(graphics);
 
 }
@@ -145,7 +146,7 @@ function centreBlock(block) {
             .easing( TWEEN.Easing.Quadratic.InOut );
 
     tween.start();
-    
+
     /*
     containerPosTargetX = 100 - block.x;
     containerPosTargetY = 100 - block.y;

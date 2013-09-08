@@ -108,7 +108,7 @@
 
             <div class="slide">
                 <div class="contents">
-                    <h2 class="central">Start developing!</h2>
+                    <h2 class="central">Development starts... now</h2>
                 </div>
             </div>
 
@@ -344,7 +344,7 @@
                 </div>
             </div>
 
-            <div class="slide threejs-results">
+            <div class="slide performance-results">
                 <div class="contents">
                     <h2>So far...</h2>
                     <div data-build>
@@ -376,7 +376,7 @@
                 </div>
             </div>
 
-            <div class="slide threejs-results no-header">
+            <div class="slide performance-results no-header">
                 <div class="contents">
                     <div data-build>
                         <div class="centre-wrap current">
@@ -425,7 +425,7 @@
                 </div>
             </div>
 
-            <div class="slide threejs-results">
+            <div class="slide performance-results">
                 <div class="contents">
                     <h2>So far...</h2>
                     <div data-build>
@@ -457,7 +457,7 @@
                 </div>
             </div>
 
-            <div class="slide threejs-results no-header">
+            <div class="slide performance-results no-header">
                 <div class="contents">
                     <div data-build>
                         <div class="centre-wrap current">
@@ -495,7 +495,7 @@
                         </div>
                         <div class="centre-wrap">
                             <ul class="smaller">
-                                <li>Merging the geometries (see: <a href="http://bit.ly/threejs-merge-geo">bit.ly/threejs-merge-geo</a>)</li>
+                                <li>Merging the text/block geometries (see: <a href="http://bit.ly/threejs-merge-geo">bit.ly/threejs-merge-geo</a>)</li>
                             </ul>
                         </div>
                         <div class="centre-wrap">
@@ -558,7 +558,7 @@ renderer = new THREE.CanvasRenderer();
                 </div>
             </div>
 
-            <div class="slide threejs-results no-header">
+            <div class="slide performance-results no-header">
                 <div class="contents">
                     <div data-build>
                         <div class="centre-wrap current">
@@ -597,7 +597,7 @@ python build.py
 
             <div class="slide">
                 <div class="contents">
-                    <h2>Meanwhile...</h2>
+                    <h2>Meanwhile, new design...</h2>
                     <div data-build>
                         <img src="img/zamblocks-main-screen.png" alt="New design"/>
                     </div>
@@ -606,13 +606,13 @@ python build.py
 
             <div class="slide">
                 <div class="contents">
-                    <h2>So here it is...</h2>
+                    <h2>So the finished prototype...</h2>
                     <video src="videos/zamblocks-demo.m4v" width="80%" controls>
                     </video>
                 </div>
             </div>
 
-            <div class="slide threejs-results no-header">
+            <div class="slide performance-results no-header">
                 <div class="contents">
                     <div data-build>
                         <div class="centre-wrap current">
@@ -660,11 +660,61 @@ python build.py
                 </div>
             </div>
 
+            <div class="slide threejs-canvas live-code">
+                <div class="contents">
+                    <h2>Let's take a look...</h2>
+                    <p class="link"><a href="demos/made-earlier/03-pixijs-canvas.html">demos/made-earlier/03-pixijs-canvas.html</a></p>
+                </div>
+            </div>
+
+            <div class="slide no-header">
+                <div class="contents">
+                    <video src="videos/pixijs-canvas.m4v" width="80%" controls>
+                    </video>
+                </div>
+            </div>
+
+            <div class="slide performance-results">
+                <div class="contents">
+                    <h2>With 100 blocks...</h2>
+                    <div data-build>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li><strong>60</strong> FPS on Desktop (Chrome)</li>
+                                <li><strong>15-21</strong> FPS on iPhone 4 (iOS Safari)</li>
+                                <li><strong>20-28</strong> FPS on Galaxy Nexus (Chrome for Android)</li>
+                            </ul>
+                        </div>
+                        <div class="smiley">
+                            <span>:-)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>But...</h2>
+                    <div class="centre-wrap" data-build>
+                        <ul class="smaller">
+                            <li>Only launched 6 months ago</li>
+                            <li>Not that many examples or tutorials yet</li>
+                            <li>Having problems with mouse &amp; touch drags...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div class="slide header-and-para">
                 <div class="contents">
                     <h2>More libraries</h2>
                     <p>Good list: <a href="http://html5gameengine.com">html5gameengine.com</a></p>
+                </div>
+            </div>
+
+            <div class="slide header-and-para">
+                <div class="contents">
+                    <h2>Or... no library!</h2>
                 </div>
             </div>
 
@@ -674,12 +724,14 @@ python build.py
                     <div class="centre-wrap">
                         <ul class="smaller" data-build>
                             <li>Wouldn't use Three.js for this</em>
-                                <ul>
+                                <ul class="sublist">
                                     <li>It's better suited to desktop for now</li>
                                     <li>And it's meant for 3D!</li>
                                 </ul>
                             </li>
-                            <li>For simple 2D stuff like this, would probably ditch libraries &amp; just use Canvas directly</li>
+                            <li>If 3D is required, CSS3D looks good for small numbers of objects</li>
+                            <li>Pixi.js - early days right now - looks a good bet for the future</li>
+                            <li>Current thought: ditch libraries &amp; use &lt;canvas&gt; directly!</li>
                         </ul>
                     </div>
                 </div>
@@ -687,9 +739,9 @@ python build.py
 
             <div class="slide concluding-thoughts">
                 <div class="contents">
-                    <h2>Concluding thoughts</h2>
+                    <h2>Final thoughts</h2>
                     <ul class="smaller" data-build>
-                        <li>Hard right now, especially on mobile</li>
+                        <li>Smooth web UIs are hard right now, especially on mobile</li>
                         <li><strong>But</strong> gap between web &amp; native is narrowing</li>
                         <li>HTML5 games about to hit the big time</li>
                         <li>Lines between web sites, apps &amp; games are blurring</li>
