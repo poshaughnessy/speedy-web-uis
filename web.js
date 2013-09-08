@@ -14,6 +14,7 @@ app.configure(function() {
     app.use('/js', express.static(__dirname + '/js'));
     app.use('/media', express.static(__dirname + '/media'));
     app.use('/models', express.static(__dirname + '/models'));
+    app.use('/sandbox', express.static(__dirname + '/sandbox'));
     app.use('/videos', express.static(__dirname + '/videos'));
     app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'));
 });
