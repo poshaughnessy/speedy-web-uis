@@ -819,6 +819,12 @@ small.source {
             font-size: 1.4em;
         }
 
+        .loading {
+            position: absolute;
+            top: 35%;
+            width: 100%;
+        }
+
     }
 
     &.no-header {

@@ -588,6 +588,10 @@ small.source {
   margin: 3em 0 1em 0;
   font-style: italic;
   font-size: 1.4em; }
+.slide.threejs-webgl .loading {
+  position: absolute;
+  top: 35%;
+  width: 100%; }
 .slide.no-header .contents > *:nth-child(1) {
   margin-top: 5%; }
 .slide.next-time ul {

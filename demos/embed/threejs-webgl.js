@@ -61,6 +61,8 @@ Demos.demos.push(
 
                     scene.add( mesh );
 
+                    $('.loading', container).fadeOut('fast');
+
                     animate();
 
                 });
