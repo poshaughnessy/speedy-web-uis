@@ -584,11 +584,7 @@ small.source {
 .slide.threejs-results ul {
   margin: 3em auto 0 auto;
   max-width: 80%; }
-.slide.threejs-webgl h3 {
-  margin: 3em 0 1em 0;
-  font-style: italic;
-  font-size: 1.4em; }
-.slide.threejs-webgl .loading {
+.slide.threejs-webgl-dino .loading, .slide.threejs-webgl-robot .loading {
   position: absolute;
   top: 35%;
   width: 100%; }
@@ -607,6 +603,10 @@ small.source {
     margin-bottom: 1em; }
   .slide.concluding-thoughts ul li:nth-child(odd) {
     color: #666; }
+.slide.credits p {
+  font-style: italic; }
+.slide.credits ul.smaller {
+  font-size: 0.8em; }
 .slide .smiley {
   clear: left;
   padding-top: 2em; }

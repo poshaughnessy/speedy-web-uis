@@ -23,7 +23,8 @@ Demos.demos.push(
                     projector,
                     textMaterial,
                     textLabels = [],
-                    textMergedGeo;
+                    textMergedGeo,
+                    stopped;
 
                 var BLOCK_COLOURS = {
                     ORANGE : {
@@ -328,7 +329,20 @@ Demos.demos.push(
 
                 }
 
+                this.start = function() {
+                    stopped = false;
+                    animate();
+                };
+
+                this.stop = function() {
+                    stopped = true;
+                };
+
                 function animate() {
+
+                    if( stopped ) {
+                        return;
+                    }
 
                     requestAnimationFrame( animate );
 

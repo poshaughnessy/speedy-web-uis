@@ -86,7 +86,6 @@ Demos.demos.push(
 
                 var controls = new THREE.TrackballControls( camera, renderer.domElement );
 
-
                 // Stats
 
                 var stats = new Stats();
@@ -95,9 +94,24 @@ Demos.demos.push(
                 stats.domElement.style.right = '0px';
                 container.appendChild( stats.domElement );
 
+                var stopped = false;
+
+                this.start = function() {
+                    stopped = false;
+                    animate();
+                };
+
+                this.stop = function() {
+                    stopped = true;
+                };
+
                 // Animate
 
                 var animate = function() {
+
+                    if( stopped ) {
+                        return;
+                    }
 
                     renderer.render( scene, camera );
 

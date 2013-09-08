@@ -85,7 +85,22 @@ Demos.demos.push(
 
                 // Animate
 
+                var stopped = false;
+
+                this.start = function() {
+                    stopped = false;
+                    animate();
+                };
+
+                this.stop = function() {
+                    stopped = true;
+                };
+
                 var animate = function() {
+
+                    if( stopped ) {
+                        return;
+                    }
 
                     renderer.render( scene, camera );
 

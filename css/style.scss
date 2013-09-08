@@ -811,13 +811,8 @@ small.source {
         }
     }
 
-    &.threejs-webgl {
-
-        h3 {
-            margin: 3em 0 1em 0;
-            font-style: italic;
-            font-size: 1.4em;
-        }
+    &.threejs-webgl-dino,
+    &.threejs-webgl-robot {
 
         .loading {
             position: absolute;
@@ -857,6 +852,17 @@ small.source {
             li:nth-child(odd) {
                 color: #666;
             }
+        }
+    }
+
+    &.credits {
+
+        p {
+            font-style: italic;
+        }
+
+        ul.smaller {
+            font-size: 0.8em;
         }
     }
 

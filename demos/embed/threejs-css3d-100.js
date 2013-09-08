@@ -16,7 +16,8 @@ Demos.demos.push(
                     stats,
                     objects = [],
                     width,
-                    height;
+                    height,
+                    stopped = false;
 
                 init();
                 animate();
@@ -243,7 +244,20 @@ Demos.demos.push(
 
                 }
 
+                this.start = function() {
+                    stopped = false;
+                    animate();
+                };
+
+                this.stop = function() {
+                    stopped = true;
+                };
+
                 function animate() {
+
+                    if( stopped ) {
+                        return;
+                    }
 
                     requestAnimationFrame( animate );
 

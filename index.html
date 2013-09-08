@@ -241,7 +241,7 @@
                 </div>
             </div>
 
-            <div class="slide threejs-webgl">
+            <div class="slide threejs-webgl-dino">
                 <div class="contents">
                     <h2>Three.js?</h2>
                     <!--<iframe src="demos/embed/threejs-webgl.html" width="80%" height="70%"></iframe>-->
@@ -261,7 +261,7 @@
                             <a href="http://hexgl.bkcore.com/"><img src="img/hexgl.png" alt="HexGL"/></a>
                             <h4><a href="http://hexgl.bkcore.com/">HexGL (WebGL)</a></h4>
                             <p>Thibaut Despoulain</p>
-                            <p class="video"><a href="#">(Video)</a></p>
+                            <p class="video"><a href="videos/hexgl.mp4">(Video)</a></p>
                         </div>
                         <div class="demo">
                             <a href="http://threejs.org/examples/css3d_molecules"><img src="img/molecules-css3d.png" alt="Molecules (CSS3D)"/></a>
@@ -334,6 +334,13 @@
                 </div>
             </div>
 
+            <div class="slide no-header">
+                <div class="contents">
+                    <video src="videos/threejs-css3d.m4v" width="80%" controls>
+                    </video>
+                </div>
+            </div>
+
             <div class="slide threejs-results">
                 <div class="contents">
                     <h2>So far...</h2>
@@ -356,6 +363,13 @@
                 <div class="contents">
                     <h2>Taking it a bit further</h2>
                     <div id="container-css3d-100" class="demo-container"></div>
+                </div>
+            </div>
+
+            <div class="slide no-header">
+                <div class="contents">
+                    <video src="videos/threejs-css3d-100.m4v" width="80%" controls>
+                    </video>
                 </div>
             </div>
 
@@ -398,6 +412,13 @@
                     <h2>One I made earlier</h2>
                     <small>(You can spin it around)</small>
                     <div id="container-canvas" class="demo-container"></div>
+                </div>
+            </div>
+
+            <div class="slide no-header">
+                <div class="contents">
+                    <video src="videos/threejs-canvas.m4v" width="80%" controls>
+                    </video>
                 </div>
             </div>
 
@@ -454,7 +475,9 @@
                 <div class="contents">
                     <h2>Key Optimisation 1</h2>
                     <div data-build>
-
+                        <div>
+                            <p></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -550,22 +573,40 @@
                 </div>
             </div>
 
-            <div class="slide threejs-robot">
+            <div class="slide threejs-webgl-robot">
                 <div class="contents">
                     <h2>Thanks!</h2>
-                    <div id="container-robot" class="demo-container"></div>
+                    <div id="container-robot" class="demo-container">
+                        <div class="loading">Loading...</div>
+                    </div>
                     <p class="bottom">Follow / give feedback / send abuse to <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
+                </div>
+            </div>
+
+            <div class="slide credits">
+                <div class="contents">
+                    <h2>Credits</h2>
+                    <p>Special thanks to...</p>
+                    <div class="centre-wrap">
+                    <ul class="smaller">
+                        <li>Our <em>Future Technologies Champions</em> for their ideas and help with ZamBlocks</li>
+                        <li>Dorling Kindersley for their dinosaur model - used with permission</li>
+                        <li>Tony Parisi for his 'WebGL Up & Running Book', especially the robot example</li>
+                        <li>The creator of the robot model - it's no longer up at the <a href="http://www.turbosquid.com/FullPreview/Index.cfm/ID/475463">URL referenced in the book</a>.
+                            If you're the creator, please get in touch with me and I'll happily pay to use it!</li>
+                        <li>MrDoob and AlteredQualia for their amazing work on Three.js</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <script src="demos/embed/threejs-webgl.js"></script>
+    <script src="demos/embed/threejs-webgl-dino.js"></script>
     <script src="demos/embed/threejs-css3d.js"></script>
     <script src="demos/embed/threejs-css3d-100.js"></script>
     <script src="demos/embed/threejs-canvas.js"></script>
     <script src="demos/embed/threejs-canvas-text.js"></script>
-    <script src="demos/embed/robot.js"></script>
+    <script src="demos/embed/threejs-webgl-robot.js"></script>
 </body>
 </html>
