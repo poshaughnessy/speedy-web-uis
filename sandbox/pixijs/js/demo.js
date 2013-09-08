@@ -4,7 +4,11 @@ var stage,
     container,
     stats,
     objects = [],
-    BLOCK_SIZE = 100;
+    BLOCK_SIZE = 100,
+    ORANGE = 0xf88d46,
+    BLUE = 0x46e1f8,
+    GREEN = 0x66cc66,
+    YELLOW = 0xffcc33;
 
 document.getElementById('container').appendChild(renderer.view);
 
@@ -19,39 +23,45 @@ container.height = window.innerHeight;
 
 stage.addChild(container);
 
-var blocks = [
-    {
-        id: 1,
-        colour: 0xf88d46,
-        x: 100,
-        y: 100,
-        graphics: null
-    },
-    {
-        id: 2,
-        colour: 0x46e1f8,
-        x: 100,
-        y: 200,
-        graphics: null
-    },
-    {
-        id: 3,
-        colour: 0x66cc66,
-        x: 200,
-        y: 200,
-        graphics: null
-    },
-    {
-        id: 4,
-        colour: 0xffcc33,
-        x: 200,
-        y: 300,
-        graphics: null
-    }
-];
+var blocks = [];
 
-var scrollX = 0,
-    scrollY = 0;
+function createBlock(id, colour, x, y) {
+
+    blocks.push({
+        id: id,
+        colour: colour,
+        x: x,
+        y: y
+    });
+
+}
+
+createBlock(1, ORANGE, BLOCK_SIZE, BLOCK_SIZE);
+createBlock(2, BLUE, BLOCK_SIZE * 2, BLOCK_SIZE);
+createBlock(3, GREEN, BLOCK_SIZE * 2, BLOCK_SIZE * 2);
+createBlock(4, YELLOW, BLOCK_SIZE * 2, BLOCK_SIZE * 3);
+createBlock(5, ORANGE, BLOCK_SIZE * 3, BLOCK_SIZE * 3);
+createBlock(6, BLUE, BLOCK_SIZE * 3, BLOCK_SIZE * 4);
+createBlock(7, GREEN, BLOCK_SIZE * 4, BLOCK_SIZE * 4);
+createBlock(8, YELLOW, BLOCK_SIZE * 5, BLOCK_SIZE * 4);
+createBlock(9, ORANGE, BLOCK_SIZE * 6, BLOCK_SIZE * 4);
+createBlock(10, BLUE, BLOCK_SIZE * 7, BLOCK_SIZE * 4);
+
+for( var i=0; i < 10; i++ ) {
+    createBlock(11+i, ORANGE, BLOCK_SIZE * 4, BLOCK_SIZE * (5+i));
+}
+
+for( i=0; i < 10; i++ ) {
+    createBlock(21+i, BLUE, BLOCK_SIZE * 5, BLOCK_SIZE * (5+i));
+}
+
+for( i=0; i < 10; i++ ) {
+    createBlock(31+i, GREEN, BLOCK_SIZE * 6, BLOCK_SIZE * (5+i));
+}
+
+for( i=0; i < 10; i++ ) {
+    createBlock(41+i, YELLOW, BLOCK_SIZE * 7, BLOCK_SIZE * (5+i));
+}
 
 // Stats
 stats = new Stats();
@@ -62,7 +72,7 @@ document.getElementById('container').appendChild( stats.domElement );
 
 // Create blocks
 
-for( var i=0; i < blocks.length; i++ ) {
+for( i=0; i < blocks.length; i++ ) {
 
     var block = blocks[i];
 
@@ -112,21 +122,34 @@ for( var i=0; i < blocks.length; i++ ) {
         };
     })(block);
 
-    graphics.tap = function(data){
-        console.log("tap", data);
-    };
+    graphics.tap = (function(block) {
+        return function(data){
+            console.log("tap", block);
+            centreBlock(block);
+        };
+    })(block);
 
     container.addChild(graphics);
 
 }
 
+/*
 var containerPosTargetX = 0;
 var containerPosTargetY = 0;
+*/
 
 function centreBlock(block) {
 
+    var tween = new TWEEN.Tween( container.position )
+            .to( { x: 100 - block.x, y: 100 - block.y }, 500)
+            .easing( TWEEN.Easing.Quadratic.InOut );
+
+    tween.start();
+    
+    /*
     containerPosTargetX = 100 - block.x;
     containerPosTargetY = 100 - block.y;
+    */
 
 }
 
@@ -135,18 +158,6 @@ function animate() {
     renderer.render( stage );
 
     /*
-    for( var i=0; i < blocks.length; i++ ) {
-
-        var block = blocks[i];
-
-        var graphics = block.graphics;
-
-        graphics.position.x = block.x - scrollX;
-        graphics.position.y = block.y - scrollY;
-
-    }
-    */
-
     if( container.position.x < containerPosTargetX ) {
         container.position.x += Math.min(10, containerPosTargetX - container.position.x);
 
@@ -160,6 +171,9 @@ function animate() {
     } else if( container.position.y > containerPosTargetY ) {
         container.position.y -= Math.min(10, container.position.y - containerPosTargetY);
     }
+    */
+
+    TWEEN.update();
 
     stats.update();
 
