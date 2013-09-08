@@ -95,6 +95,11 @@ strong {
 em {
   font-style: italic; }
 
+pre {
+  font-family: 'Courier New', courier, sans-serif;
+  background-color: #eee;
+  padding: 1em; }
+
 .presentation {
   position: absolute;
   height: 100%;
@@ -281,10 +286,13 @@ ul {
   float: left;
   clear: left;
   left: 50%; }
-  .centre-wrap ul {
+  .centre-wrap > * {
     position: relative;
     left: -50%;
     text-align: left; }
+
+.centre-wrap + * {
+  clear: left; }
 
 .hidden {
   display: none; }
@@ -590,6 +598,15 @@ small.source {
   width: 100%; }
 .slide.no-header .contents > *:nth-child(1) {
   margin-top: 5%; }
+.slide.optimisations h3 {
+  font-size: 1.3em;
+  margin-top: 3em; }
+.slide.optimisations p {
+  font-size: 1.3em; }
+.slide.optimisations pre {
+  margin: 3em 0 2em 0;
+  font-size: 1.2em;
+  text-align: left; }
 .slide.next-time ul {
   margin: 3em auto 0 auto;
   max-width: 80%;

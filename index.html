@@ -476,7 +476,14 @@
                     <h2>Key Optimisation 1</h2>
                     <div data-build>
                         <div>
-                            <p></p>
+                            <h3>Reduce the <em>curve segments</em> for any Three.js-rendered text</h3>
+                            <div class="centre-wrap">
+                                <pre>
+var labelGeometry = new THREE.ShapeGeometry(
+    labelShapes, <strong>{curveSegments: 1}</strong> );
+                                </pre>
+                            </div>
+                            <p>Default is 12.</p>
                         </div>
                     </div>
                 </div>
@@ -486,7 +493,18 @@
                 <div class="contents">
                     <h2>Key Optimisation 2</h2>
                     <div data-build>
+                        <div>
+                            <h3>Disable 'sortObjects' and 'sortElements' on CanvasRenderer</h3>
+                            <div class="centre-wrap">
+                                <pre>
+renderer = new THREE.CanvasRenderer();
 
+<strong>renderer.sortObjects = false;</strong>
+<strong>renderer.sortElements = false;</strong>
+                                </pre>
+                            </div>
+                            <p><em>If you don't need z-ordering</em>.</p>
+                        </div>
                     </div>
                 </div>
             </div>

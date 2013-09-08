@@ -115,6 +115,12 @@ em {
     font-style: italic;
 }
 
+pre {
+    font-family: 'Courier New', courier, sans-serif;
+    background-color: #eee;
+    padding: 1em;
+}
+
 .presentation {
     position: absolute;
     height: 100%;
@@ -353,12 +359,16 @@ ul {
     clear: left;
     left: 50%;
 
-    ul {
+    > * {
         position: relative;
         left: -50%;
         text-align: left;
     }
 
+}
+
+.centre-wrap + * {
+    clear: left;
 }
 
 .hidden {
@@ -825,6 +835,23 @@ small.source {
     &.no-header {
         .contents > *:nth-child(1) {
             margin-top: 5%;
+        }
+    }
+
+    &.optimisations {
+        h3 {
+            font-size: 1.3em;
+            margin-top: 3em;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+
+        pre {
+            margin: 3em 0 2em 0;
+            font-size: 1.2em;
+            text-align: left;
         }
     }
 
