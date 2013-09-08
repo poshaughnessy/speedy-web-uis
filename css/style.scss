@@ -821,6 +821,12 @@ small.source {
 
     }
 
+    &.no-header {
+        .contents > *:nth-child(1) {
+            margin-top: 5%;
+        }
+    }
+
     &.next-time {
         ul {
             margin: 3em auto 0 auto;

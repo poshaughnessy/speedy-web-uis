@@ -65,13 +65,27 @@ Demos.demos.push(
 
                 });
 
+                var stopped = false;
+
+                this.start = function() {
+                    stopped = false;
+                };
+
+                this.stop = function() {
+                    stopped = true;
+                };
+
                 // Animate
 
                 var animate = function() {
 
-                    mesh.rotation.y += 0.02;
+                    if( !stopped ) {
 
-                    renderer.render( scene, camera );
+                        mesh.rotation.y += 0.02;
+
+                        renderer.render( scene, camera );
+
+                    }
 
                     requestAnimationFrame( animate );
 

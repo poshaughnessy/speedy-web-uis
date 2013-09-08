@@ -9,12 +9,12 @@ app.get('/', function(request, response) {
 app.configure(function() {
     app.use('/css', express.static(__dirname + '/css'));
     app.use('/demos', express.static(__dirname + '/demos'));
-    app.use('/demos-made-earlier', express.static(__dirname + '/demos-made-earlier'));
     app.use('/fonts', express.static(__dirname + '/fonts'));
     app.use('/img', express.static(__dirname + '/img'));
     app.use('/js', express.static(__dirname + '/js'));
     app.use('/media', express.static(__dirname + '/media'));
     app.use('/models', express.static(__dirname + '/models'));
+    app.use('/videos', express.static(__dirname + '/videos'));
     app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'));
 });
 

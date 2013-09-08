@@ -588,6 +588,8 @@ small.source {
   margin: 3em 0 1em 0;
   font-style: italic;
   font-size: 1.4em; }
+.slide.no-header .contents > *:nth-child(1) {
+  margin-top: 5%; }
 .slide.next-time ul {
   margin: 3em auto 0 auto;
   max-width: 80%;

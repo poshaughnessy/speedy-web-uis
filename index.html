@@ -29,16 +29,14 @@
     <script src="js/lib/jquery-1.9.1.js"></script>
     <script src="js/lib/three.js"></script>
     <script src="js/lib/Detector.js"></script>
+    <script src="js/lib/ColladaLoader.js"></script>
     <script src="js/lib/stats.min.js"></script>
     <script src="js/lib/tween.min.js"></script>
     <script src="js/lib/CSS3DRenderer.js"></script>
     <script src="js/lib/TrackballControls.js"></script>
     <script src="js/lib/CustomTrackballControls.js"></script>
+    <script src="js/lib/helvetiker_regular.typeface.js"></script>
     <script src="js/embedded-demos.js"></script>
-    <script src="demos/embed/threejs-webgl.js"></script>
-    <script src="demos/embed/threejs-css3d.js"></script>
-    <script src="demos/embed/threejs-css3d-100.js"></script>
-    <script src="demos/embed/threejs-canvas.js"></script>
     <script src="js/slides.js"></script>
     <script src="js/setup.js"></script>
     <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
@@ -359,11 +357,10 @@
                 </div>
             </div>
 
-            <div class="slide threejs-results">
+            <div class="slide threejs-results no-header">
                 <div class="contents">
-                    <h2>With 100 blocks...</h2>
                     <div data-build>
-                        <div class="centre-wrap">
+                        <div class="centre-wrap current">
                             <ul class="smaller">
                                 <li><strong>30-50</strong> FPS on Desktop (Chrome)</li>
                                 <li><strong>5-22</strong> FPS on iPhone 4 (iOS Safari)</li>
@@ -420,6 +417,73 @@
                 </div>
             </div>
 
+            <div class="slide threejs-canvas-text">
+                <div class="contents">
+                    <h2>Taking it a bit further</h2>
+                    <div id="container-canvas-text" class="demo-container"></div>
+                </div>
+            </div>
+
+            <div class="slide no-header">
+                <div class="contents">
+                    <video src="videos/threejs-canvas-text.m4v" width="80%" controls>
+                    </video>
+                </div>
+            </div>
+
+            <div class="slide threejs-results no-header">
+                <div class="contents">
+                    <div data-build>
+                        <div class="centre-wrap current">
+                            <ul class="smaller">
+                                <li><strong>20-30</strong> FPS on Desktop (Chrome)</li>
+                                <li><strong>1-2</strong> FPS on iPhone 4 (iOS Safari)</li>
+                                <li><strong>2-5</strong> FPS on Galaxy Nexus (Chrome for Android)</li>
+                            </ul>
+                        </div>
+                        <div class="smiley">
+                            <span>:-(</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide optimisations">
+                <div class="contents">
+                    <h2>Key Optimisation 1</h2>
+                    <div data-build>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide optimisations">
+                <div class="contents">
+                    <h2>Key Optimisation 2</h2>
+                    <div data-build>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide threejs-results">
+                <div class="contents">
+                    <h2>Now...</h2>
+                    <div data-build>
+                        <div class="centre-wrap">
+                            <ul class="smaller">
+                                <li><strong>50-60</strong> FPS on Desktop (Chrome)</li>
+                                <li><strong>6-10</strong> FPS on iPhone 4 (iOS Safari)</li>
+                                <li><strong>12-20</strong> FPS on Galaxy Nexus (Chrome for Android)</li>
+                            </ul>
+                        </div>
+                        <div class="smiley">
+                            <span>:-|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="slide">
                 <div class="contents">
                     <h2 class="central">Another library?</h2>
@@ -464,7 +528,7 @@
                     <div class="centre-wrap">
                         <ul class="smaller" data-build>
                             <li>Probably wouldn't use Three.js for mobile (especially for 2D!)</li>
-                            <li>In this case, would probably ditch libraries and just use Canvas directly</li>
+                            <li>For simple 2D stuff, would ditch libraries &amp; just use Canvas directly</li>
                         </ul>
                     </div>
                 </div>
@@ -484,15 +548,22 @@
                 </div>
             </div>
 
-            <div class="slide concluding-thoughts">
+            <div class="slide threejs-robot">
                 <div class="contents">
                     <h2>Thanks!</h2>
-                    <!-- TODO a nice last little demo... -->
-                    <p class="bottom">Follow / give feedback / abuse <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
+                    <div id="container-robot" class="demo-container"></div>
+                    <p class="bottom">Follow / give feedback / send abuse to <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <script src="demos/embed/threejs-webgl.js"></script>
+    <script src="demos/embed/threejs-css3d.js"></script>
+    <script src="demos/embed/threejs-css3d-100.js"></script>
+    <script src="demos/embed/threejs-canvas.js"></script>
+    <script src="demos/embed/threejs-canvas-text.js"></script>
+    <script src="demos/embed/robot.js"></script>
 </body>
 </html>
