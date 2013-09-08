@@ -615,6 +615,8 @@ small.source {
   margin: 3em 0 2em 0;
   font-size: 1.2em;
   text-align: left; }
+.slide.pixijs-but ul {
+  margin-top: 2em; }
 .slide.next-time ul {
   margin: 2em auto 0 auto;
   max-width: 80%;
