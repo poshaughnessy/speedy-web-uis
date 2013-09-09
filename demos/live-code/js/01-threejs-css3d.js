@@ -15,8 +15,6 @@
     // zNear
     // zFar
 
-    // Let there be light
-
     // Create a block
 
     // Set up blocks
