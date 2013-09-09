@@ -604,8 +604,7 @@ small.source {
 .slide.non-optimisations ul.smaller {
   font-size: 0.8em; }
 .slide.non-optimisations .centre-wrap:nth-child(even) li {
-  color: #666;
-  font-style: italic; }
+  color: #666; }
 .slide.optimisations h3 {
   font-size: 1.3em;
   margin-top: 2em; }
@@ -617,31 +616,18 @@ small.source {
   text-align: left; }
 .slide.pixijs-but ul {
   margin-top: 2em; }
-.slide.next-time ul {
+.slide.conclusions ul {
   margin: 2em auto 0 auto;
-  max-width: 80%;
   text-align: left; }
-  .slide.next-time ul li:nth-child(even) {
-    color: #666;
-    font-style: italic; }
-  .slide.next-time ul li {
-    margin-bottom: 1.5em; }
-    .slide.next-time ul li > ul.sublist {
-      margin: 1em 0 0 1em; }
-      .slide.next-time ul li > ul.sublist li {
-        color: #313131;
-        font-style: normal;
-        font-size: 0.9em;
-        margin-bottom: 0.5em;
-        white-space: nowrap; }
+  .slide.conclusions ul li:nth-child(even) {
+    color: #666; }
 .slide.concluding-thoughts ul {
   margin-top: 3em;
   text-align: left; }
   .slide.concluding-thoughts ul li {
     margin-bottom: 1em; }
   .slide.concluding-thoughts ul li:nth-child(even) {
-    color: #666;
-    font-style: italic; }
+    color: #666; }
 .slide.credits p {
   font-style: italic; }
 .slide.credits ul.smaller {
