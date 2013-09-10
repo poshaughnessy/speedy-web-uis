@@ -14,7 +14,7 @@
     var width = container.offsetWidth;
     var height = container.offsetHeight;
 
-    renderer.setSize( container.offsetWidth, container.offsetHeight );
+    renderer.setSize( width, height );
 
     // Make a scene
 
@@ -29,18 +29,38 @@
             10000         // zFar
     );
 
-    camera.position.y = 100;
-    camera.position.z = 800;
+    camera.position.y = 0;
+    camera.position.z = 1000;
 
-    // Let there be light
-
-    var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
-    scene.add( ambientLight );
+    scene.add( camera );
 
     // Create a block
 
+    function createBlock(x, y, colorHex) {
+
+        var geometry = new THREE.CubeGeometry(100, 100, 50);
+
+        var colour = new THREE.Color({color: colorHex});
+
+        var material = new THREE.MeshBasicMaterial({color: colour});
+
+        var mesh = new THREE.Mesh(geometry, material);
+
+        mesh.position.set(x, y, 0);
+
+        scene.add( mesh );
+
+    }
 
     // Set up blocks
+
+    var BLOCK_SIZE = 100;
+
+    createBlock( 0, 0, 0x0000FF );
+
+    createBlock( 0, -BLOCK_SIZE, 0xFF3333 );
+
+    createBlock( BLOCK_SIZE, -BLOCK_SIZE, 0x00FF00 );
 
 
     // Controls
