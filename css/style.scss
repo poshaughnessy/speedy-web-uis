@@ -836,6 +836,17 @@ small.source {
 
     }
 
+    &.threejs-webgl-robot {
+
+        .demo-container {
+            height: 75%;
+        }
+
+        .bottom p:nth-child(1) {
+            margin-bottom: 1em;
+        }
+    }
+
     &.no-header {
         .contents > *:nth-child(1) {
             margin-top: 5%;

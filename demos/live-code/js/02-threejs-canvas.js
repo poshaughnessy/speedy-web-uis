@@ -40,7 +40,7 @@
 
         var geometry = new THREE.CubeGeometry(100, 100, 50);
 
-        var colour = new THREE.Color({color: colorHex});
+        var colour = new THREE.Color(colorHex);
 
         var material = new THREE.MeshBasicMaterial({color: colour});
 
