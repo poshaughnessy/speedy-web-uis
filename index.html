@@ -26,6 +26,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Speedy Web UIs</title>
+    <script data-main="js/main" src="js/lib/require.js"></script>
+    <!--
     <script src="js/lib/jquery-1.9.1.js"></script>
     <script src="js/lib/three.js"></script>
     <script src="js/lib/Detector.js"></script>
@@ -39,6 +41,7 @@
     <script src="js/embedded-demos.js"></script>
     <script src="js/slides.js"></script>
     <script src="js/setup.js"></script>
+    -->
     <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link rel="apple-touch-icon" href="img/ios-icon-57.png"/>
@@ -176,48 +179,6 @@
                 </div>
             </div>
 
-            <!--
-            <div class="slide libraries">
-                <div class="contents">
-                    <h2>Which library?</h2>
-                    <div data-build data-slideshow>
-                        <div>
-                            <ul class="smaller">
-                                <li><strong>Three.js (3D)</strong> - WebGL, Canvas, CSS3D</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="smaller">
-                                <li><strong>Three.js (3D)</strong> - WebGL, Canvas, CSS3D</li>
-                                <li><strong>Pixi.js (2D)</strong> - WebGL, CanvasL</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="smaller">
-                                <li><strong>Three.js (3D)</strong> - WebGL, Canvas, CSS3DL</li>
-                                <li><strong>Pixi.js (2D)</strong> - WebGL, Canvas</li>
-                                <li><strong>EaselJS</strong> - Canvas, DOM</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="smaller">
-                                <li><strong>Three.js (3D)</strong> - WebGL, Canvas, CSS3D</li>
-                                <li><strong>Pixi.js (2D)</strong> - WebGL, Canvas</li>
-                                <li><strong>EaselJS</strong> - Canvas, DOM</li>
-                                <li>Many more (<a href="http://html5gameengine.com">html5gameengine.com</a>)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="contents">
-                    <h2 class="central">Demos</h2>
-                </div>
-            </div>
-            -->
-
             <div class="slide">
                 <div class="contents">
                     <h2 class="central">Which library?</h2>
@@ -227,7 +188,6 @@
             <div class="slide threejs-webgl-dino">
                 <div class="contents">
                     <h2>Three.js?</h2>
-                    <!--<iframe src="demos/embed/threejs-webgl.html" width="80%" height="70%"></iframe>-->
                     <div id="container-webgl" class="demo-container">
                         <div class="loading">Loading...</div>
                     </div>
@@ -275,25 +235,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--
-            <div class="slide">
-                <div class="contents">
-                    <h2>EaselJS</h2>
-                    <div class="demos">
-                        <div class="demo">
-                            <a href="http://www.createjs.com/Demos/EaselJS/SpriteSheet.html"><img src="img/easeljs-spritesheet.png" alt="EaselJS spritesheets"/></a>
-                            <h4><a href="http://www.createjs.com/Demos/EaselJS/SpriteSheet.html">EaselJS Sprite Sheets</a></h4>
-                            <p>CreateJS</p>
-                            <p class="video"><a href="#">(Video)</a></p>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <p>More demos: <a href="http://www.createjs.com/EaselJS">www.createjs.com/EaselJS</a></p>
-                    </div>
-                </div>
-            </div>
-            -->
 
             <div class="slide header-and-para">
                 <div class="contents">
@@ -606,7 +547,7 @@ python build.py
                 <div class="contents">
                     <h2>So the finished prototype...</h2>
                     <video width="80%" controls>
-                        <source src="videos/zamblocks-demo.mp4" type="video/mp4;"/>
+                        <source src="videos/zamblocks-demo.m4v" type="video/mp4;"/>
                         <source src="videos/zamblocks-demo.webm" type="video/webm;"/>
                     </video>
                 </div>
@@ -772,12 +713,5 @@ python build.py
         </div>
 
     </div>
-
-    <script src="demos/embed/threejs-webgl-dino.js"></script>
-    <script src="demos/embed/threejs-css3d.js"></script>
-    <script src="demos/embed/threejs-css3d-100.js"></script>
-    <script src="demos/embed/threejs-canvas.js"></script>
-    <script src="demos/embed/threejs-canvas-text.js"></script>
-    <script src="demos/embed/threejs-webgl-robot.js"></script>
 </body>
 </html>
