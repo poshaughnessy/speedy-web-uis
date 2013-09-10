@@ -36,31 +36,8 @@
 
     // Create a block
 
-    function createBlock(x, y, colorHex) {
-
-        var geometry = new THREE.CubeGeometry(100, 100, 50);
-
-        var colour = new THREE.Color(colorHex);
-
-        var material = new THREE.MeshBasicMaterial({color: colour});
-
-        var mesh = new THREE.Mesh(geometry, material);
-
-        mesh.position.set(x, y, 0);
-
-        scene.add( mesh );
-
-    }
 
     // Set up blocks
-
-    var BLOCK_SIZE = 100;
-
-    createBlock( 0, 0, 0x0000FF );
-
-    createBlock( 0, -BLOCK_SIZE, 0xFF3333 );
-
-    createBlock( BLOCK_SIZE, -BLOCK_SIZE, 0x00FF00 );
 
 
     // Controls
